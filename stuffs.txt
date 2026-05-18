@@ -1,0 +1,29 @@
+Here is just a list of stuffs to reference back too
+- Add faveicon next to name
+- 
+
+
+
+General layout for css
+
+selector{
+	display mode
+	anythin else used for display
+
+	height, margin, stuff like that
+
+	color selections
+	bg
+	color
+}
+
+
+
+
+
+
+
+
+
+
+

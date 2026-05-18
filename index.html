@@ -1,0 +1,107 @@
+<!--
+To do:
+Reduce cls
+Add cool about pop up
+
+Try new fonts
+
+Settle on a faveicon and change the icon next to name
+
+Maybe do mini projects, or keep all projects in one
+
+redo text under stuff
+Add when resume was updated
+in js add time since update, for resume
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- keywords used when searching for website-->
+    <meta name="keywords" content="personal website">
+
+    <!--Author of code-->
+    <meta name="Author" content="Nat Krah">
+
+    <!--Title of webpage-->
+    <title>nat-krah</title>
+
+    <!--Add an faveicon-->
+    <link id="faveicon" rel="icon" href="img/light-faveicon.png" type="image/x.icon">
+
+    <!--Linking the css and js file-->
+    <link rel="stylesheet" href="styles/styles.css">
+    <!--script defer src="js/script.js"></script-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <a href="index.html">
+                <button id="homeselect" class="home btn" aria-label="nat-krah">
+                    <i class="logo-icon" data-feather="github"></i>
+                    <h1 class="logo-text">nat-krah</h1>
+                </button>
+            </a>
+            
+            <button id="theme-toggle" aria-label="Toggle Theme">
+                <i data-feather="power"></i>
+            </button>
+        </header>
+
+        <main>
+            <div id="about">
+                
+            </div>
+            <div class="cards">
+                <div class="card btn">
+                    <a href="sub-pages/about.html">
+                        <h3>About</h3>
+                        <p>Backgroun, interests, and this site</p>
+                    </a>
+                </div>
+                <div class="card btn">
+                    <a href="sub-pages/projects.html">
+                        <h3>Projects</h3>
+                        <p>A look at my work</p>
+                    </a>
+                </div>
+                <div class="card btn">
+                    <a href="assets/resume.pdf" target="_blank">
+                        <h3>Resume</h3>
+                        <p>My Experience and skills</p>
+                        <p class="status">Updated May 18th</p>
+
+                    </a>
+                </div>
+                <div class="card btn">
+                    <a href="sub-pages/webpage-custimation.html">
+                        <h3>Website Customization</h3>
+                        <p>Adjust themes and settings</p>
+                    </a>
+                </div>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <ul>
+                <li><a href="https://github.com/nat-krah" target="_blank"><i data-feather="github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/nat-krah/" target="_blank"><i data-feather="linkedin"></i></a></li>
+                <li><a href="mailto:nicholaskrah1@gmail.com" target="_blank"><i data-feather="mail"></i></a></li>
+            </ul>
+        </footer>
+    </div>
+    
+
+    <script>
+      feather.replace();
+    </script>
+</body>
+</html>
