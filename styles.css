@@ -24,7 +24,7 @@
   --highlight: hsl(193 100% 91%);
   --border: hsl(189 100% 30%);
   --border-muted: hsl(191 59% 51%);
-  --primary: hsl(190 100% 12%);
+  --primary: hsl(190, 87%, 44%);
   --secondary: hsl(14 68% 28%);
 
   --shadow-s:
@@ -89,11 +89,15 @@ p {
 .feather {
   width: 20px;
   height: 20px;
-  stroke: var(--primary);
+  stroke: inherit;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+.nowrap{
+  white-space: nowrap;
 }
 
 
@@ -105,6 +109,7 @@ button,
   border-radius: 8px;
 
   background-color: var(--bg);
+  stroke: var(--text);
 }
 button:focus {
   outline: none;
@@ -116,6 +121,7 @@ button:hover,
   background: var(--bg-light);
   box-shadow: var(--shadow-m);
   transition: var(--transition);
+  stroke: var(--primary)
 }
 
 a {
@@ -291,7 +297,7 @@ footer ul{
   align-items: center;
   align-content: center;
 
-  margin: auto auto 10rem auto; /*might need to reduce bottom margin*/
+  margin: auto auto 5rem auto; /*might need to reduce bottom margin*/
   width: min(90vw, 400px);
 
   list-style-type: none;

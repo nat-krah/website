@@ -12,10 +12,10 @@
 
   // Apply theme class to body
   function applyTheme(theme) {
-    if (theme === "light") {
-      body.classList.add("light");
+    if (theme === "dark") {
+      body.classList.add("dark");
     } else {
-      body.classList.remove("light");
+      body.classList.remove("dark");
     }
   }
 
@@ -35,7 +35,7 @@
 
   // Toggle theme on button click
   toggleBtn.addEventListener("click", () => {
-    const isLight = body.classList.contains("light");
-    setTheme(isLight ? "dark" : "light");
+    const isLight = body.classList.contains("dark");
+    setTheme(isLight ? "light" : "dark");
   });
 })();

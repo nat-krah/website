@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- keywords used when searching for website-->
+    <meta name="keywords" content="personal website">
+
+    <!--Author of code-->
+    <meta name="Author" content="Nat Krah">
+
+    <!--Title of webpage-->
+    <title>nat-krah | projects</title>
+
+    <!--Add an faveicon-->
+    <link id="faveicon" rel="icon" href="../img/light-faveicon.png" type="image/x.icon">
+
+    <!--Linking the css and js file-->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <!--script defer src="js/script.js"></script-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <a href="../index.html">
+                <button id="homeselect" class="home btn" aria-label="nat-krah">
+                    <i class="logo-icon" data-feather="github"></i>
+                    <h1 class="logo-text">nat-krah</h1>
+                </button>
+            </a>
+            
+            <button id="theme-toggle" aria-label="Toggle Theme">
+                <i data-feather="power"></i>
+            </button>
+        </header>
+
+        <!--svg items are    causing weird spacing, replace with feather icones-->
+
+    
+        <main>
+            <div class="sidebar">
+                <i class="sidebar-icon-mobile btn" data-feather="menu"></i>
+                <div class="sidebar-container">
+                    <nav class="sidebar-nav links-lines-x">
+                        <a href="#project1" class="sidebar-links"><p>project 1</p></a>
+                        <a href="#project2" class="sidebar-links"><p>project 2</p></a>
+                        <a href="#project3" class="sidebar-links"><p>project 3</p></a>
+                        <a href="#project4" class="sidebar-links"><p>project 4</p></a>
+                        <a href="#project5" class="sidebar-links"><p>project 5</p></a>
+                        <a href="#project6" class="sidebar-links"><p>project 6</p></a>
+                        <a href="#project7" class="sidebar-links"><p>project 7</p></a>
+                    </nav>
+                    <i class="sidebar-icon btn" data-feather="chevron-left"></i>
+                </div>
+            </div>
+
+            <div class="project-list">
+                <h1>Projects</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, aliquam.</p>
+
+                <section id="project1" class="project">
+                    <h2>Project 1</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, reiciendis molestias saepe molestiae sapiente, obcaecati ea officiis alias cumque sed libero. Incidunt dignissimos culpa doloremque quas eveniet magni sint, natus iusto nostrum illo optio ad tempore veritatis! Ad, perspiciatis. Et minima libero similique eaque vero porro ipsum totam dicta at aliquam magnam quia obcaecati praesentium deleniti quo numquam fuga sed qui, velit ullam officia recusandae magni. Assumenda facilis doloribus impedit ipsam perspiciatis repellat nihil cum, a repudiandae magni ipsa laborum minima at vel corrupti sed fuga vitae, distinctio inventore? Quaerat saepe ad ut nihil excepturi numquam, omnis laudantium debitis consectetur.</p>
+                    
+                </section>
+                <section id="project2" class="project">
+                    <h2>Project 2</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, reiciendis molestias saepe molestiae sapiente, obcaecati ea officiis alias cumque sed libero. Incidunt dignissimos culpa doloremque quas eveniet magni sint, natus iusto nostrum illo optio ad tempore veritatis! Ad, perspiciatis. Et minima libero similique eaque vero porro ipsum totam dicta at aliquam magnam quia obcaecati praesentium deleniti quo numquam fuga sed qui, velit ullam officia recusandae magni. Assumenda facilis doloribus impedit ipsam perspiciatis repellat nihil cum, a repudiandae magni ipsa laborum minima at vel corrupti sed fuga vitae, distinctio inventore? Quaerat saepe ad ut nihil excepturi numquam, omnis laudantium debitis consectetur.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <ul>
+                <li><a href="../index.html"><i data-feather="home"></i></a></li>
+                <li><a href="https://github.com/nat-krah" target="_blank"><i data-feather="github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/nat-krah/" target="_blank"><i data-feather="linkedin"></i></a></li>
+                <li><a href="mailto:nicholaskrah1@gmail.com" target="_blank"><i data-feather="mail"></i></a></li>
+            </ul>
+        </footer>
+    </div>
+    
+
+    <script>
+      feather.replace();
+    </script>
+</body>
+</html>

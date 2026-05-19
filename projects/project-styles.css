@@ -1,0 +1,111 @@
+.wrapper{
+    gap: 2rem;
+}
+main{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 13px;
+
+    position: relative;
+}
+
+
+section{
+    background-color: var(--bg);
+    margin: 2rem 0 1rem 0;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    
+    display:flex;   
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: var(--shadow-s);
+}
+
+.sidebar{
+    align-self: stretch;
+}
+
+.sidebar-container{
+   display: flex;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 2rem;
+    align-self: flex-start;
+}
+
+.sidebar-nav{
+    display: flex;
+    
+    width: 10vw;
+    max-width: 10rem;
+    height:20rem;
+}
+
+.sidebar .feather{
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke-width: 1.5;
+}
+
+.links-lines-x {
+    flex-direction: column;
+    margin-bottom: 0;
+}
+.links-lines-x a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 1rem;
+    height:1.5rem;
+    margin-bottom: 1rem;
+}
+.links-lines-x a:hover {
+    position: relative;
+    transform: translateX(0.5rem);
+    color: var(--primary);
+}
+.links-lines-x a::after {
+    content: "";
+    position: absolute;
+    width: .5rem;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    background: var(--text);
+    transition: var(--transition);
+}
+
+.links-lines-x a:hover::after {
+    width: 1rem;
+    left: -0.5rem;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+a p{
+    color: inherit;
+    font: var(--small);
+}
+
+
+/*Fix this fucking hamberger*/
+.sidebar-icon-mobile{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+}
+
+
+@media (max-width: 870px) {
+    .sidebar-container{
+        display: none;
+    }
+
+    .sidebar-icon-mobile{
+        display: block;
+    }
+}
