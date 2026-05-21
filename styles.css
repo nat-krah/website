@@ -116,8 +116,7 @@ button:focus {
 }
 
 button:hover,
-.btn:hover,
-.card:hover {
+.btn:hover{
   background: var(--bg-light);
   box-shadow: var(--shadow-m);
   transition: var(--transition);
@@ -280,7 +279,15 @@ header{
   display: none;
 }
 
+.resume-buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
 
+.resume-button{
+  padding: 10px;
+}
 
 
 /********************************************************************************\
