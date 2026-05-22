@@ -7,17 +7,16 @@ Try new fonts
 
 Settle on a faveicon and change the icon next to name
 
-Keep projects all in one tab, seperate them by projects mini projects
-have method or sorting projects
+Write method to sort projects
 Cronological
 Relevance
-Time
+Aplhabetical
 
 redo text under stuff
 Add when resume was updated
 in js add time since update, for resume
 
-increase hamberger box size
+make images enlargable
 -->
 
 <!DOCTYPE html>
@@ -40,7 +39,7 @@ increase hamberger box size
 
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="styles.css">
-    <!--script defer src="js/script.js"></script-->
+    <script defer src="script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 
 </head>
@@ -80,17 +79,15 @@ increase hamberger box size
                 </div>
 
                 <!--What would be cool is to include buttons for pdf, html, certificats-->
-                <div class="card">
-                    <h3>Resume</h3>
-                    <div class="resume-buttons">
-                        <a href="assets/resume.pdf"><button class="resume-button">PDF</button></a>
-                        <a><button class="resume-button">HTML</button></a>
-                        <a><button class="resume-button">Certificates</button></a>
-                    </div>
-                    
-                    <p class="status">Updated May 18th</p>
+                <div class="card btn">
+                    <a href="assets/resume.pdf" target="_blank">
+                        <h3>Resume</h3>
+                        <p>My Experience and skills</p>
+                        <p class="status">Updated May 18th</p>
 
+                    </a>
                 </div>
+
                 <div class="card btn">
                     <a href="webpage-custimization/webpage-custimization.html">
                         <h3>Website Customization</h3>

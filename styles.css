@@ -16,26 +16,6 @@
 }
 /* Base colors with CSS variables for easy theming*/
 :root {
-  --bg-dark: hsl(193 93% 86%);
-  --bg: hsl(193 100% 92%);
-  --bg-light: hsl(193 100% 97%);
-  --text: hsl(204 100% 4%);
-  --text-muted: hsl(190 100% 12%);
-  --highlight: hsl(193 100% 91%);
-  --border: hsl(189 100% 30%);
-  --border-muted: hsl(191 59% 51%);
-  --primary: hsl(190, 87%, 44%);
-  --secondary: hsl(14 68% 28%);
-
-  --shadow-s:
-  inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
-  --shadow-m:
-    inset 0 1px 2px #ffffff50, 0 2px 4px #00000030, 0 4px 8px #00000015;
-  --transition: all 0.3s ease-in-out;
-
-  
-}
-body.dark {
   --bg-dark: hsl(209 100% 2%);
   --bg: hsl(198 100% 3%);
   --bg-light: hsl(193 100% 5%);
@@ -46,10 +26,26 @@ body.dark {
   --border-muted: hsl(192 100% 8%);
   --primary: hsl(192 69% 59%);
   --secondary: hsl(14 76% 71%);
-  --danger: hsl(8 58% 66%);
-  --warning: hsl(51 41% 48%);
-  --success: hsl(150 37% 53%);
-  --info: hsl(217 66% 68%);
+
+  --shadow-s:
+  inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
+  --shadow-m:
+    inset 0 1px 2px #ffffff50, 0 2px 4px #00000030, 0 4px 8px #00000015;
+  --transition: all 0.3s ease-in-out;
+
+  
+}
+body.light {
+  --bg-dark: hsl(193 93% 86%);
+  --bg: hsl(193 100% 92%);
+  --bg-light: hsl(193 100% 97%);
+  --text: hsl(204 100% 4%);
+  --text-muted: hsl(190 100% 12%);
+  --highlight: hsl(193 100% 91%);
+  --border: hsl(189 100% 30%);
+  --border-muted: hsl(191 59% 51%);
+  --primary: hsl(190, 87%, 44%);
+  --secondary: hsl(14 68% 28%);
 }
 
 /********************************************************************************\
@@ -84,6 +80,9 @@ h4 {
 p {
   font: var(--p);
   color: var(--text-muted);
+}
+img{
+  font: var(--p);
 }
 
 .feather {
@@ -330,4 +329,33 @@ footer a:hover svg {
   stroke: var(--primary);
   scale: 1.1;
   filter: drop-shadow(0 0 8px var(--primary));
+}
+
+/********************************************************************************\
+*                                                                                *
+*                                Enlarge Images                                  *
+*                                                                                *
+\********************************************************************************/
+
+
+#imageOverlay {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#imageOverlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  cursor: zoom-out;
 }

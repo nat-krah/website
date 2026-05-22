@@ -1,3 +1,13 @@
+<!--
+Think of new grabbing names for items
+Rewrite a bunch of the text
+Redo the captions
+
+Write LED Board
+
+Make drop down work
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +29,7 @@
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="project-styles.css">
-    <!--script defer src="js/script.js"></script-->
+    <script defer src="project-script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 
 </head>
@@ -42,18 +52,23 @@
     
         <main>
             <div class="sidebar">
-                <i class="sidebar-icon-mobile btn" data-feather="menu"></i>
+                <div class="sidebar-icon-mobile-container"><i class="sidebar-icon-mobile btn" data-feather="menu"></i></div>
                 <div class="sidebar-container">
                     <nav class="sidebar-nav links-lines-x">
-                        <a href="#project1" class="sidebar-links"><p>project 1</p></a>
-                        <a href="#project2" class="sidebar-links"><p>project 2</p></a>
-                        <a href="#project3" class="sidebar-links"><p>project 3</p></a>
-                        <a href="#project4" class="sidebar-links"><p>project 4</p></a>
-                        <a href="#project5" class="sidebar-links"><p>project 5</p></a>
-                        <a href="#project6" class="sidebar-links"><p>project 6</p></a>
-                        <a href="#project7" class="sidebar-links"><p>project 7</p></a>
+                        <a href="#all-seeing-eye" class="sidebar-links"><p>All Seeing Eye</p></a>
+                        <a href="#led-board" class="sidebar-links"><p>LED Board</p></a>
+                        <a href="#cubesat" class="sidebar-links"><p> SPEX CubeSat</p></a>
+                        <a href="#balista" class="sidebar-links"><p>Strengths Balista</p></a>
+                        <a href="#website" class="sidebar-links"><p>Personal Website</p></a>
+                        <a href="#vex-over-under" class="sidebar-links"><p>Vex Over Under</p></a>
+                        <a href="#floating-turbine" class="sidebar-links"><p>Floating Wind Turbine</p></a>
+                        <a href="#vex-spin-up" class="sidebar-links"><p>Vex Spin Under</p></a>
+                        <a href="#snake" class="sidebar-links"><p>Snake in Terminal</p></a>
+                        <a href="#lunar-lander" class="sidebar-links"><p>Lunar Lander</p></a>
+                        <a href="#chime-machine" class="sidebar-links"><p>Chime Machine</p></a>
+                        <a href="#sandy" class="sidebar-links"><p>Sandy Beach Cleanup</p></a>
                     </nav>
-                    <i class="sidebar-icon btn" data-feather="chevron-left"></i>
+                    <i id="hide-side" class="sidebar-icon btn" data-feather="chevron-left"></i>
                 </div>
             </div>
 
@@ -61,17 +76,224 @@
                 <h1>Projects</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, aliquam.</p>
 
-                <section id="project1" class="project">
-                    <h2>Project 1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, reiciendis molestias saepe molestiae sapiente, obcaecati ea officiis alias cumque sed libero. Incidunt dignissimos culpa doloremque quas eveniet magni sint, natus iusto nostrum illo optio ad tempore veritatis! Ad, perspiciatis. Et minima libero similique eaque vero porro ipsum totam dicta at aliquam magnam quia obcaecati praesentium deleniti quo numquam fuga sed qui, velit ullam officia recusandae magni. Assumenda facilis doloribus impedit ipsam perspiciatis repellat nihil cum, a repudiandae magni ipsa laborum minima at vel corrupti sed fuga vitae, distinctio inventore? Quaerat saepe ad ut nihil excepturi numquam, omnis laudantium debitis consectetur.</p>
-                    <img src="../img/" alt="Image of asdasd">
+                <section id="all-seeing-eye" class="project">
+                    <h2>All Seeing Eye</h2>
+                    <p>
+                        The "All Seeing Eye" is a robotic tentacle that moves in complex patterns and will use machine vision to track peoples faces. 
+                        While working on the Mechanical team we redesigned and rebuilt the entire arm and power system to reduce strain on the stepper motors and core. 
+                        This coming semester I will be working as co-lead and focusing on rebuilding the core and integrating machine vision.
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/all-seeing-eye/new-eye.jpg" alt="Image of the All Seeing Eye preparing for Imagine" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">All Seeing Eye prepared for Imagin RIT</p>
+                    </div>
                 </section>
-                <section id="project2" class="project">
-                    <h2>Project 2</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, reiciendis molestias saepe molestiae sapiente, obcaecati ea officiis alias cumque sed libero. Incidunt dignissimos culpa doloremque quas eveniet magni sint, natus iusto nostrum illo optio ad tempore veritatis! Ad, perspiciatis. Et minima libero similique eaque vero porro ipsum totam dicta at aliquam magnam quia obcaecati praesentium deleniti quo numquam fuga sed qui, velit ullam officia recusandae magni. Assumenda facilis doloribus impedit ipsam perspiciatis repellat nihil cum, a repudiandae magni ipsa laborum minima at vel corrupti sed fuga vitae, distinctio inventore? Quaerat saepe ad ut nihil excepturi numquam, omnis laudantium debitis consectetur.</p>
+
+                <section id="led-board" class="project">
+                    <h2>LED Board</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid eum, illum nesciunt quia cumque sapiente quaerat vero, consectetur inventore at quidem rerum suscipit perferendis? Dolorem, eos? Expedita necessitatibus at veritatis ab dolorem animi, sapiente itaque quam, autem laboriosam maxime earum qui natus, praesentium eveniet accusamus ullam repudiandae similique esse vel.
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="https://placehold.co/400x600" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Lorem ipsum dolor sit amet.</p>
+                    </div>
                 </section>
+
+                <section id="cubesat" class="project">
+                    <h2>SPEX CubeSat</h2>
+                    <p>
+                        In Cubesat we are exploring different radiation deflection/diversion methods in the hope of finding a lighter and cheaper way to protect electric components for satellites. 
+                        We are working on a small 1U cubesat with several radiation sensors. Our goal is to get collect baseline data and prove mission success before expanding to a full research satellite. 
+                        Additionally, we are constructing several High Altitude Balloons (HABs) for individual component testing and practice assembly. 
+                        I am working as Payload Lead organizing efforts to design radiation detectors to integrate with the larger 1U cubesat. 
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/cubesat/spex-hab-space.png" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Image from SPEX High Altitude Balloon</p>
+                    </div>
+                </section>
+
+                <section id="balista" class="project">
+                    <h2>Strengths Balista</h2>
+                    <p>
+                        Project for my MECE 204 Strength Lab
+                        I worked with a group of three other engineers to design a small 3D printed pumpkin launching device.
+                        Using priore knowledge we decided to use a ballista design. 
+                        We did extensive strength analysis on all aspects of the balista. 
+                        I was responsible for all 3D printing, prepping the baslista for launch, and assisted extensily with the CAD design. 
+                        No part of the balista broke even when subjected to over 100-lbs for force.
+                        <br>
+                        Our design was top 3 in all sections of the class for both range and strength to weight ratio.
+
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/balista/balista2.png" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Second iteration of the Balista</p>
+                    </div>
+                </section>
+
+                <section id="website" class="project">
+                    <h2>Personal Website</h2>
+                    <p>
+                        This website is designed to showcase my projects from over the years. 
+                        I built the frontend with HTML and CSS, and the backend with Javascript. 
+                        I hope to add more detailed documentation of my projects with separate pages dedicated to each and add more personality.
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/website-images/homepage.png" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Old homepage screenshot</p>
+                    </div>
+                </section>
+
+                <section id="vex-over-under" class="project">
+                    <h2>Vex Over Under</h2>
+                    <p>
+                        Robot designed and built to compete in VEX&#39;s Over Under Challenge. 
+                        I served as co-lead and worked on CAD Model, Building, Coding, Notebook and was primary driver at competition. 
+                        We reached the semi finals in the State Competition. 
+                        The first iteration featured a four motor PTO, catapult, intake, sleds, and pneumatic “wings”. 
+                        The second iteration featured a band assisted elevation mechanism, a raised puncher, a pneumatic blocker, an intake, sleds, and wings. 
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/vex-over-under/red-leds.jpg" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Showcasing robot with red LEDs</p>
+                    </div>
+                </section>
+
+                <section id="floating-turbine" class="project">
+                    <h2>Floating Wind Turbine</h2>
+                    <p>
+                        With the increasing threat of global warming, now, more than ever, it is vital that we work to build clean, reliable energy sources. 
+                        UMaine had organized efforts to asked Maine students to design new methods of supporting wind turbines for further development in the gulf of Maine. 
+                        Our design features a long cylindrical base with a large weight on the bottom.
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/wind-turbine/windstorm.jpg" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Wind turbine competing at UMaine&#39;s Windstorm Challenge</p>
+                    </div>
+                </section>
+                
+                <section id="vex-spin-up" class="project">
+                    <h2>Vex Spin Under</h2>
+                    <p>
+                        Robot designed to compete in VEX&#39;s Spin Up Challenge. First iteration featured ratcheting 3000 rpm 4” flywheel, top loading hopper, and intake. 
+                        Second iteration featured 3600 rpm 3” two stage flywheel, bottom loading hopper, intake, roller, string launcher, sleds, and custom odometry for position tracking. 
+                        I specialised in the intake and hopper system and string launcher. 
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/vex-spin-up/disk.jpeg" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Robot launching disks</p>
+                    </div>
+                </section>
+
+                <section id="snake" class="project">
+                    <h2>Snake in Terminal</h2>
+                    <p>
+                        As part of an effort to learn more c++ and to get more confortable using Unix Terminals, I decided to code the game snake from the ground up. 
+                        I used limited resources, only looked at ansi escape codes, terminal flags, and c++ documentation. 
+                        Basic code was ported over to JavaScript and can be played <a href="snake.html" style="text-decoration: underline;">here</a>.
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/snake/intro-sequence.png" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Intro Sequence</p>
+                    </div>
+                </section>
+
+                <section id="lunar-lander" class="project">
+                    <h2>Lunar Lander</h2>
+                    <p>
+                        Final project from my MECE 117 programming for engineers class. 
+                        We were tasked with writing a simple lunar lander game in MATLAB. My game features custom terrain generation and unique graphics. 
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/lunar-lander/playing.png" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Gameplay</p>
+                    </div>
+                </section>
+
+                <section id="chime-machine" class="project">
+                    <h2>Chime Machine</h2>
+                    <p>
+                        Final project for MECE 104, engineering design tools. 
+                        Tasked with designing a machine to play a selected song with chimes using limited resources. 
+                        Our design featured two seperate playing mechanisms: a cart with solenoids that was suspended over the chimes and cam driven "hammers"
+                        I was responsible for design and construction of the frame and writing all of the code.
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/chime-machine/final-chime.JPG" alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Final Chime Machine</p>
+                    </div>
+                </section>
+
+                <section id="sandy" class="project">
+                    <h2>Sandy the Beach Cleanup Robot</h2>
+                    <p>
+                        A challenge issued by Onshape challenged applicants to use vex materials to design a robot that would help the environment. 
+                        My robotics team and I decided to tackle ocean trash with a beach cleanup robot. It would sift large sections of the sand and deposit any trash into a removable bin. 
+                        I worked on the sifter and trash bin. 
+                    </p>
+                    <div class="project-content">
+                        <img class="img-project enlargeable" src="../img/sandy/fronISO.png"  alt="Image of SPEX CubeSat" width="400px">
+                        <div class="nav-buttons">
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">CAD view 1</p>
+                    </div>
+                </section>
+
             </div>
         </main>
+
+        <!--Background for when images are enlarged-->
+        <div id="imageOverlay">
+            <img id="overlayImage" src="" alt="Enlarged view">
+        </div>
 
         <footer>
             <ul>

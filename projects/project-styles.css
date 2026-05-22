@@ -24,12 +24,43 @@ section{
     box-shadow: var(--shadow-s);
 }
 
+.project-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: .75rem;
+}
+
+.img-project{
+    border: 3px solid var(--primary);
+    max-width:75%;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.project-btn{
+    background-color: var(--bg-light);
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+.project-btn:hover{
+    background-color: var(--highlight);
+}
+
+
+
 .sidebar{
     align-self: stretch;
 }
 
 .sidebar-container{
-   display: flex;
+    display: flex;
     position: sticky;
     position: -webkit-sticky;
     top: 2rem;
@@ -38,15 +69,28 @@ section{
 
 .sidebar-nav{
     display: flex;
+    display: none;
     
     width: 10vw;
+    min-width: 18ch;
     max-width: 10rem;
     height:20rem;
 }
 
+.sidebar-container.sidebar-collapsed {
+  width: 2rem;
+  transition: var(--transition);
+}
+
+.sidebar-container.sidebar-collapsed .sidebar-nav {
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition);
+}
+
 .sidebar .feather{
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     stroke-width: 1.5;
 }
 
@@ -90,14 +134,28 @@ a p{
     font: var(--small);
 }
 
+.sidebar-icon-mobile-container .feather{
+    width: 40px;
+    height: 40px;
+}
 
-/*Fix this fucking hamberger*/
-.sidebar-icon-mobile{
+.sidebar-icon-mobile-container{
     position: absolute;
     right: 10px;
     top: 10px;
-    display: none;
+    min-height: 100%;
 }
+
+.sidebar-icon-mobile{
+    position: sticky;
+    right: 10px;
+    top: 40px;
+    display: none;
+    padding: 6px;
+    border-radius: 18px;
+    background-color: var(--bg-light);
+}
+
 
 
 @media (max-width: 870px) {
