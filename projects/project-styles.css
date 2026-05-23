@@ -1,6 +1,7 @@
 .wrapper{
     gap: 2rem;
 }
+
 main{
     display: flex;
     flex-flow: row nowrap;
@@ -46,7 +47,6 @@ section{
     background-color: var(--bg-light);
     width: 30px;
     height: 30px;
-    display: none;
 }
 
 .project-btn:hover{
@@ -69,7 +69,6 @@ section{
 
 .sidebar-nav{
     display: flex;
-    display: none;
     
     width: 10vw;
     min-width: 18ch;
@@ -79,13 +78,21 @@ section{
 
 .sidebar-container.sidebar-collapsed {
   width: 2rem;
-  transition: var(--transition);
+  transition: all .2s ease-in-out;
 }
 
 .sidebar-container.sidebar-collapsed .sidebar-nav {
   pointer-events: none;
+  z-index: -5;
   opacity: 0;
-  transition: var(--transition);
+  transition: all .2s ease-in-out;
+}
+
+.sidebar-container.sidebar-collapsed .sidebar-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .sidebar .feather{

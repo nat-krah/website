@@ -7,6 +7,9 @@
     const toggleBtn = document.querySelector("#theme-toggle");
     const THEME_KEY = "theme";
 
+    const temp = document.querySelector("#faveicon");
+    console.log(temp)
+
     // Get system preference
     function getSystemTheme() {
         return window.matchMedia("(prefers-color-scheme: dark)").matches
