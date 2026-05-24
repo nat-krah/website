@@ -66,7 +66,7 @@
   //Close overlay
   overlay.addEventListener('click', closeOverlay);
   document.addEventListener('keydown', (e) => {
-  if (e.key === "Escape") closeOverlay();
+    if (e.key === "Escape") closeOverlay();
   });
 
   function closeOverlay(){

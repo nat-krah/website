@@ -80,8 +80,12 @@ p {
   font: var(--p);
   color: var(--text-muted);
 }
-img{
-  font: var(--p);
+
+
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feather{
@@ -142,7 +146,7 @@ a:hover {
 
 /********************************************************************************\
 *                                                                                *
-*                                   Body Sheet                                   *
+*                                      Body                                      *
 *                                                                                *
 \********************************************************************************/
 
@@ -264,7 +268,6 @@ header{
   margin-bottom: .25rem;
 }
 
-
 .status{
   position: absolute;
   right: 10px;
@@ -276,6 +279,82 @@ header{
   padding: 0px;
   display: none;
 }
+
+.about{
+  background-color: rgba(61, 61, 61, 0.4);
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+}
+
+.about.show{
+  display: flex;
+  opacity: 1;
+  animation: all 3s ease-in-out;
+}
+
+.about-content{
+  background-color: var(--bg-light);
+  border-radius: 15px;
+
+  width: min(800px, 90%);
+  height: min-content;
+
+  position: relative;
+  display: flex;
+}
+
+.about-content img{
+  margin: 4rem 0 3rem 3rem;
+
+  font: var(--p);
+  border: 3px solid var(--primary);
+  max-width:75%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  
+}
+
+.about-content h2{
+  position: absolute;
+  top:1.5rem;
+  left: 3rem;
+}
+
+.about-content p{
+  margin: 3rem;
+}
+
+@media (max-width: 720px) {
+  .about-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .about-content img{
+    margin: 4rem 2rem 0 2rem;
+  }
+
+  .about-content p{
+    margin: 2rem;
+  }
+}
+
+
+
 
 .resume-buttons{
   display: flex;

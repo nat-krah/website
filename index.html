@@ -1,22 +1,14 @@
 <!--
 To do:
-Reduce cls
-Add cool about pop up
-
 Try new fonts
 
-Settle on a faveicon and change the icon next to name
-
-Write method to sort projects
-Cronological
-Relevance
-Aplhabetical
+Try to change faveicon color to match primary
 
 redo text under stuff
 Add when resume was updated
 in js add time since update, for resume
 
-make images enlargable
+made about fade in
 -->
 
 <!DOCTYPE html>
@@ -55,22 +47,31 @@ make images enlargable
                     <h1 class="logo-text">nat-krah</h1>
                 </button>
             </a>
-            
             <button id="theme-toggle" aria-label="Toggle Theme">
                 <i data-feather="power"></i>
             </button>
         </header>
 
         <main>
-            <div id="about">
-                
+            <div class="about">
+                <div class="about-content">
+                    <h2>About</h2>
+                    <img src="img/mainPhoto.JPG" alt="Nat Krah" id="about-image" width="300">
+                    <div class="flex-center">
+                        <p>
+                            Hi! <br> I'm Nat, a second year at RIT studying mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
+                            From simple legos in Elementery school to specializing in designing complex parts for a non-uniform robotic arm.         
+                            My life has been a series of projects, and this website is an attempt to document their highlights.
+                        </p>
+                    </div>
+                </div>    
             </div>
             <div class="cards">
-                <div class="card btn">
-                    <a href="">
+                <div id="aboutBtn" class="card btn">
+                    <i href="" class="btn">
                         <h3>About</h3>
                         <p>Backgroun, interests, and this site</p>
-                    </a>
+                    </i>
                 </div>
                 <div class="card btn">
                     <a href="projects/projects.html">
