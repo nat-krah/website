@@ -7,22 +7,191 @@ main{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 13px;
 
+    gap: 1rem;
     position: relative;
 }
 
+
+/********************************************************************************\
+*                                                                                *
+*                                    Sidebar                                     *
+*                                                                                *
+\********************************************************************************/
+
+
+/*Mobil dropdown*/
+.sidebar-icon-mobile-container{
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    height: stretch;
+    min-height: 100vh;
+
+    pointer-events: none;
+}
+
+.sidebar-icon-mobile{
+    position: sticky;
+
+    top: 40px;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 18px;
+    padding: 5px;
+
+    z-index: 1;
+
+    pointer-events: all; /*check that this woks*/
+
+    background-color: var(--bg-light);
+    box-shadow: var(--shadow-s);
+
+    display: none;
+}
+
+
+/*Main sidebar*/
+.sidebar{
+    height: stretch;
+    min-height: 100vh;
+
+    pointer-events: none;
+}
+
+.sidebar-nav-container{
+    position: sticky;
+    top: 40px;
+
+    display: flex;
+    flex-direction: row;
+    pointer-events: all;
+}
+
+.sidebar-nav{
+    display: flex;
+    flex-direction: column;
+    
+    width: 10vw;
+    min-width: 18ch;
+
+    white-space: nowrap;
+}
+
+.sidebar-nav a{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 1rem;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+}
+.sidebar-nav a:last-child{
+    margin: 0;
+}
+
+.sidebar-nav a:hover{
+    position: relative;
+    transform: translateX(0.5rem);
+    color: var(--primary);
+}
+.sidebar-nav a::after {
+    content: "";
+    position: absolute;
+    width: .5rem;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    background: var(--text);
+    transition: var(--transition);
+}
+.sidebar-nav a:hover::after{
+    width: 1rem;
+    left: -0.5rem;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+.sidebar .feather{
+    width: 2rem;
+    height: 2rem;
+    stroke-width: 1.5;
+}
+
+.sidebar-nav p{
+    color: inherit;
+    font: var(--p);
+}
+
+.sidebar-nav.sidebar-collapsed{
+    display: none;
+}
+
+
+@media (max-width: 870px){
+    .wrapper{
+        margin: 0;
+        width: 100vw;
+    }
+
+    #hide-side{
+        display: none;
+    }
+
+    .sidebar{
+        position: absolute;
+        right: 1.5rem;
+        top: 25px;
+    }
+
+    .sidebar-icon-mobile{
+        display: inline;
+    }
+
+    .sidebar-nav-container{
+        top: 65px;
+    }
+
+    .sidebar-nav{
+        display: none;
+    }
+
+    .sidebar-nav.mobile-show{
+        display: flex;
+
+        background-color: var(--bg-light);
+        
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: var(--shadow-s);
+        min-width: 26ch;
+    }
+}
+
+
+
+/********************************************************************************\
+*                                                                                *
+*                                    Projects                                    *
+*                                                                                *
+\********************************************************************************/
 
 section{
     background-color: var(--bg);
     margin: 2rem 0 1rem 0;
     padding: 1.5rem;
+    padding-top: 1rem;
     border-radius: 1rem;
     
     display:flex;   
     flex-direction: column;
     align-items: flex-start;
     box-shadow: var(--shadow-s);
+}
+
+section h2{
+    margin-bottom: 3px;
 }
 
 .project-content{
@@ -41,137 +210,79 @@ section{
     height: auto;
     margin-top: 1rem;
     cursor: pointer;
+    transition: var(--transition);
+    border-radius: 12px;
 }
 
 .project-btn{
-    background-color: var(--bg-light);
+    background-color: rgb(0,0,0,0);
     width: 30px;
     height: 30px;
+    padding-top: 4px;
+}
+
+.prev-btn{
+    margin-right: .75rem;
 }
 
 .project-btn:hover{
-    background-color: var(--highlight);
-}
-
-
-
-.sidebar{
-    align-self: stretch;
-}
-
-.sidebar-container{
-    display: flex;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 2rem;
-    align-self: flex-start;
-    height: 30rem;
-}
-
-.sidebar-nav{
-    display: flex;
-    
-    width: 10vw;
-    min-width: 18ch;
-    max-width: 10rem;
-    height:20rem;
-}
-
-.sidebar-container.sidebar-collapsed {
-  width: 2rem;
-  transition: all .2s ease-in-out;
-}
-
-.sidebar-container.sidebar-collapsed .sidebar-nav {
-  pointer-events: none;
-  z-index: -5;
-  opacity: 0;
-  transition: all .2s ease-in-out;
-}
-
-.sidebar-container.sidebar-collapsed .sidebar-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.sidebar .feather{
-    width: 2rem;
-    height: 2rem;
-    stroke-width: 1.5;
-}
-
-.links-lines-x {
-    flex-direction: column;
-    margin-bottom: 0;
-}
-.links-lines-x a {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-left: 1rem;
-    height:1.5rem;
-    margin-bottom: 1rem;
-}
-.links-lines-x a:hover {
-    position: relative;
-    transform: translateX(0.5rem);
-    color: var(--primary);
-}
-.links-lines-x a::after {
-    content: "";
-    position: absolute;
-    width: .5rem;
-    height: 2px;
-    top: 50%;
-    left: 0;
-    background: var(--text);
-    transition: var(--transition);
-}
-
-.links-lines-x a:hover::after {
-    width: 1rem;
-    left: -0.5rem;
-    background: var(--primary);
-    transition: var(--transition);
-}
-
-a p{
-    color: inherit;
-    font: var(--small);
-}
-
-.sidebar-icon-mobile-container .feather{
-    width: 40px;
-    height: 40px;
-}
-
-.sidebar-icon-mobile-container{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    min-height: 100%;
-}
-
-.sidebar-icon-mobile{
-    position: sticky;
-    right: 10px;
-    top: 40px;
-    display: none;
-    padding: 6px;
-    border-radius: 18px;
     background-color: var(--bg-light);
 }
 
+.section-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-info h2{
+    padding: 0;
+    margin: 0;
+}
+
+.section-info a{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    padding: 5px;
+    padding-top: 8px;
+}
+
+.section-info a p{
+    font: var(--h4);
+    font-weight: lighter;
+    margin: 0;
+    color: inherit;
+}
+
+
+/*
+
+Design for mobil
+https://www.youtube.com/watch?v=y5N-dtzAC-E
+
+@media (pointer: coarse) and (hover: none) {
+
+
+}
 
 
 @media (max-width: 870px) {
-    .sidebar-container{
-        display: none;
+    .project-btn{
+        width: 35px;
+        height: 35px;
     }
 
-    .sidebar-icon-mobile{
-        display: block;
+    .project-btn .feather{
+        width: 20px;
+        height: 20px;
+    }
+
+    .prev-btn{
+        margin-right: 3rem;
     }
 }
+*/

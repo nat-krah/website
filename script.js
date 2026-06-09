@@ -46,7 +46,7 @@
 
 
   // =============================
-  // Image Enlarge
+  // About toggle
   // =============================
   const aboutbtn = document.getElementById("aboutBtn");
   const aboutSec = document.querySelector(".about");

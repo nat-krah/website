@@ -1,16 +1,17 @@
 <!--
-Think of new grabbing names for items
-Rewrite a bunch of the text
-Redo the captions
-
 Write method to sort projects
 Cronological
 Relevance
 Aplhabetical
+Sort by type of project
 
 Write LED Board
 
-fix dropdown hide
+redo images for cubesat
+
+make sure things don't wrap when thing is shrunk
+
+make nave buttons on images larger for mobile
 -->
 
 <!DOCTYPE html>
@@ -29,8 +30,8 @@ fix dropdown hide
     <title>nat-krah | projects</title>
 
     <!--Add an faveicon-->
-    <link rel="icon" href="assets/faveicon.svg" sizes="any" >
-    <link id="faveicon" rel="icon" href="assets/faveicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/faveicon.svg" sizes="any" >
+    <link id="faveicon" rel="icon" href="../assets/faveicon.svg" type="image/svg+xml">
 
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="../styles.css">
@@ -45,31 +46,31 @@ fix dropdown hide
         <header>
             <a href="../index.html">
                 <button id="homeselect" class="home btn" aria-label="nat-krah">
-                    <i class="logo-icon" data-feather="settings"></i>
-                    <h1 class="logo-text">nat-krah</h1>
+                    <i class="home-icon" data-feather="settings"></i>
+                    <h1 class="home-text">nat-krah</h1>
                 </button>
             </a>
-            
             <button id="theme-toggle" aria-label="Toggle Theme">
-                <i data-feather="power"></i>
+                <i data-feather="power" ></i>
             </button>
         </header>
     
         <main>
+            <div class="sidebar-icon-mobile-container"><i class="sidebar-icon-mobile btn" data-feather="menu"></i></div>
             <div class="sidebar">
-                <div class="sidebar-icon-mobile-container"><i class="sidebar-icon-mobile btn" data-feather="menu"></i></div>
-                <div class="sidebar-container">
+                <div class="sidebar-nav-container">
                     <nav class="sidebar-nav links-lines-x">
+                        <a href="../index.html" class="sidebar-links"><p>Home</p></a>
                         <a href="#all-seeing-eye" class="sidebar-links"><p>All Seeing Eye</p></a>
-                        <a href="#led-board" class="sidebar-links"><p>LED Board</p></a>
+                        <a href="#led-board" class="sidebar-links" style="display: none;"><p>LED Board</p></a>
                         <a href="#cubesat" class="sidebar-links"><p> SPEX CubeSat</p></a>
-                        <a href="#balista" class="sidebar-links"><p>Strengths Balista</p></a>
+                        <a href="#ballista" class="sidebar-links"><p>Strengths Ballista</p></a>
                         <a href="#website" class="sidebar-links"><p>Personal Website</p></a>
                         <a href="#vex-over-under" class="sidebar-links"><p>Vex Over Under</p></a>
                         <a href="#floating-turbine" class="sidebar-links"><p>Floating Wind Turbine</p></a>
                         <a href="#vex-spin-up" class="sidebar-links"><p>Vex Spin Under</p></a>
-                        <a href="#snake" class="sidebar-links"><p>Snake in Terminal</p></a>
-                        <a href="#lunar-lander" class="sidebar-links"><p>Lunar Lander</p></a>
+                        <a href="#snake" class="sidebar-links" style="display: none;"><p>Snake in Terminal</p></a>
+                        <a href="#lunar-lander" class="sidebar-links" style="display: none;"><p>Lunar Lander</p></a>
                         <a href="#chime-machine" class="sidebar-links"><p>Chime Machine</p></a>
                         <a href="#sandy" class="sidebar-links"><p>Sandy Beach Cleanup</p></a>
                     </nav>
@@ -77,199 +78,333 @@ fix dropdown hide
                 </div>
             </div>
 
+            <div class="temp"></div>
+
             <div class="project-list">
                 <h1>Projects</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, aliquam.</p>
+                <p>A glipse into what I do</p>
 
                 <section id="all-seeing-eye" class="project">
-                    <h2>All Seeing Eye</h2>
+                    <div class="section-info"><h2>All Seeing Eye</h2>
+                        <a href="https://github.com/Engineering-House/All-Seeing-Eye" target="_blank" class="btn nowrap" >
+                            <i class="logo-icon" data-feather="github"></i>
+                            <p>Github</p>
+                        </a>
+                        <a href="https://github.com/Engineering-House/All-Seeing-Eye" target="_blank" class="btn nowrap" >
+                            <i class="logo-icon" data-feather="github"></i>
+                            <p>Onshape</p>
+                        </a>
+                    </div>
                     <p>
-                        The "All Seeing Eye" is a robotic tentacle that moves in complex patterns and will use machine vision to track peoples faces. 
-                        While working on the Mechanical team we redesigned and rebuilt the entire arm and power system to reduce strain on the stepper motors and core. 
-                        This coming semester I will be working as co-lead and focusing on rebuilding the core and integrating machine vision.
+                        The “All Seeing Eye” is a softbody robotics tentacle that uses computer vision to track and trace people as they pass. 
+                        As project lead I have reorganized efforts for a complete redesign of the tentacle structure, implementing the first design to work since the project's conception in 2022. 
+                        Outside of leadership, I focused my efforts on perfecting the eye structure and writing controls code.
+                        <br><br>
+                        As lead I organized meetings, created timelines, ordered parts, negotiated with RIT for a table at Maker Fair and Imagine RIT, and got people what they needed to be successful. 
+                        <br><br>
+                        The tentacle consists of 8 identical plates stacked on top of each other with TPU sections in between providing a “core.” 
+                        The tentacle uses three steppers connected to wires that pull the tentacle, similar to a marionette. 
+                        The eye was attached at the end of the tentacle, which could rotate independently of the tentacle and had eyelids that could blink. 
+                        The tentacle, eye, and camera were all connected to a raspberry pi that used a python script to read the camera feed and control the movement of each section. 
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/all-seeing-eye/new-eye.jpg" alt="Image of the All Seeing Eye preparing for Imagine" width="400px">
+                    <div class="project-content"
+                        data-images='["../img/all-seeing-eye/new-eye.jpg", "../img/all-seeing-eye/eye-internals.jpg", "../img/all-seeing-eye/test-eye.JPG","../img/all-seeing-eye/old-eye.JPG"]'
+                        data-captions='["All Seeing Eye prepared for Imagin RIT", "Interals of the eye", "New tentacle prototype","Old tentacle mechanism"]'>
+
+                        <img class="img-project enlargeable" src="../img/all-seeing-eye/new-eye.jpg" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">All Seeing Eye prepared for Imagin RIT</p>
+                        <p class="img-caption">All Seeing Eye at preparing for Imagine RIT</p>
                     </div>
                 </section>
 
-                <section id="led-board" class="project">
+                <section id="led-board" class="project" style="display: none;">
                     <h2>LED Board</h2>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid eum, illum nesciunt quia cumque sapiente quaerat vero, consectetur inventore at quidem rerum suscipit perferendis? Dolorem, eos? Expedita necessitatibus at veritatis ab dolorem animi, sapiente itaque quam, autem laboriosam maxime earum qui natus, praesentium eveniet accusamus ullam repudiandae similique esse vel.
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="https://placehold.co/400x600" alt="Image of SPEX CubeSat" width="400px">
+                    <div class="project-content"
+                        data-images='[]'
+                        data-captions='[]'>
+
+                        <img class="img-project enlargeable" src="https://placehold.co/600x400" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">Lorem ipsum dolor sit amet.</p>
+                        <p class="img-caption">LED Board</p>
                     </div>
                 </section>
 
                 <section id="cubesat" class="project">
                     <h2>SPEX CubeSat</h2>
                     <p>
-                        In Cubesat we are exploring different radiation deflection/diversion methods in the hope of finding a lighter and cheaper way to protect electric components for satellites. 
-                        We are working on a small 1U cubesat with several radiation sensors. Our goal is to get collect baseline data and prove mission success before expanding to a full research satellite. 
-                        Additionally, we are constructing several High Altitude Balloons (HABs) for individual component testing and practice assembly. 
-                        I am working as Payload Lead organizing efforts to design radiation detectors to integrate with the larger 1U cubesat. 
+                        
+                        In Cubesat we were exploring radiation deflection methods in search of lighter and cheaper ways to protect electric components and astronauts. 
+                        We were working on the design and construction of a small 1U Cubesat with several radiation sensors to prove mission success and get baseline data before expanding to a full research satellite. 
+                        I served as payload lead organizing efforts to design custom radiation detectors that would integrate within the Cubesat. 
+                        <br><br>
+                        As payload lead I made sure we were on-pace with the larger team. 
+                        With little experience working with PCB design and radiation, I taught myself KiCad, elementary circuits, and the core concepts of radiation physics. 
+                        Using this knowledge I trained my peers.
+                        <br><br>
+                        The payload board consists of three main sections: the controller, the scintillating counter, and the geiger counter. 
+                        To record each event, compile the results, and manage the data, we would use the ATMEGA328. 
+                        It would connect to the greater Cubesat using a CAN bus. 
+                        The geiger counter would follow a standard low-power handheld setup and the scintillating counter was modeled after <a href="http://www.cosmicwatch.lns.mit.edu/detector" class="in-text-link" target="_blank">Comic Watch&#39;s desktop muon detector</a>. 
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/cubesat/spex-hab-space.png" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='[]'
+                        data-captions='["Terminal with fast fetch", "Hyprland Desktop"]'>
+
+                        <img class="img-project enlargeable" src="../img/cubesat/spex-hab-space.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Image from SPEX High Altitude Balloon</p>
                     </div>
                 </section>
 
-                <section id="balista" class="project">
-                    <h2>Strengths Balista</h2>
+                <section id="ballista" class="project">
+                    <h2>Strengths Ballista</h2>
                     <p>
-                        Project for my MECE 204 Strength Lab
-                        I worked with a group of three other engineers to design a small 3D printed pumpkin launching device.
-                        Using priore knowledge we decided to use a ballista design. 
-                        We did extensive strength analysis on all aspects of the balista. 
-                        I was responsible for all 3D printing, prepping the baslista for launch, and assisted extensily with the CAD design. 
-                        No part of the balista broke even when subjected to over 100-lbs for force.
+                        I worked in a group with three other engineers to design a small 3D printed pumpkin launching device. 
+                        I was responsible for 3D printing, preparing the ballista for launch, and assisted extensively with the CAD design in OnShape. 
+                        We applied strength lecture and lab concepts along with Ansys analysis to conduct a thorough analysis of the ballista. 
                         <br>
-                        Our design was top 3 in all sections of the class for both range and strength to weight ratio.
+                        No part of it broke even when subjected to over 100-lbs of force. 
+                        <br>
+                        Our design was in the top 3 out of 36 teams for both range and strength to weight ratio. 
 
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/balista/balista2.png" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/ballista/ballista2.png", "../img/ballista/engineeringDrawing.png", "../img/ballista/ballista1.png"]'
+                        data-captions='["Final ballista design", "CAD exploded view", "First iteration of the Ballista"]'>
+
+                        <img class="img-project enlargeable" src="../img/ballista/ballista2.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">Second iteration of the Balista</p>
+                        <p class="img-caption">Final ballista design</p>
                     </div>
                 </section>
 
                 <section id="website" class="project">
-                    <h2>Personal Website</h2>
+                    <div class="section-info">
+                        <h2>Personal Website</h2>
+                        <a href="https://github.com/nat-krah/website" target="_blank" class="btn nowrap" >
+                            <i class="logo-icon" data-feather="github"></i>
+                            <p>Github</p>
+                        </a>
+                    </div>
+
                     <p>
-                        This website is designed to showcase my projects from over the years. 
-                        I built the frontend with HTML and CSS, and the backend with Javascript. 
-                        I hope to add more detailed documentation of my projects with separate pages dedicated to each and add more personality.
+                        I developed this website as a complete redesign of my <a href="https://nat-krah.com" target="_blank" class="in-text-link">previous portfolio</a> created in the summer of 2025. 
+                        Both were designed to showcase my projects over the years as I&#39;ve developed technically, and were built from the ground up using HTML, CSS, and Javascript. 
+                        <br><br>
+                        I chose to write the code myself, rather than use a website builder, because I wanted to understand the inner workings of webpages. 
+                        I want to know as much of the technical world around me as possible. It has been fascinating to be able to peer into the construction of websites and understand how elements were created and modified. 
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/website-images/homepage.png" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/website-images/previous.png", "../img/website-images/code.png"]'
+                        data-captions='["Old homepage", "Website code"]'>
+
+                        <img class="img-project enlargeable" src="../img/website-images/previous.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">Old homepage screenshot</p>
+                        <p class="img-caption">Old homepage</p>
                     </div>
                 </section>
 
                 <section id="vex-over-under" class="project">
-                    <h2>Vex Over Under</h2>
-                    <p>
-                        Robot designed and built to compete in VEX&#39;s Over Under Challenge. 
-                        I served as co-lead and worked on CAD Model, Building, Coding, Notebook and was primary driver at competition. 
-                        We reached the semi finals in the State Competition. 
-                        The first iteration featured a four motor PTO, catapult, intake, sleds, and pneumatic “wings”. 
-                        The second iteration featured a band assisted elevation mechanism, a raised puncher, a pneumatic blocker, an intake, sleds, and wings. 
+                    <div class="section-info">
+                        <h2>Vex Over Under</h2>
+                        <a href="https://docs.google.com/presentation/d/1QLLU6wRsXruq7wP_DeBp-vIeSC1auTgN/edit?usp=sharing&ouid=118344373854695580405&rtpof=true&sd=true" target="_blank" class="btn nowrap logo-icon" >
+                            <i data-feather="book-open"></i>
+                            <p> Documentation</p>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=dvDqEI7qO34" target="_blank" class="btn nowrap logo-icon">
+                            <i data-feather="youtube"></i>
+                            <p>Competition</p>
+                        </a>
+                    </div>
+
+                    <p> <!--Redo the caption when piece is written-->
+                        VRC is the world's largest competitive robotics league. 
+                        In my senior year of high school I co-lead my robotics team to the state semi-finals. 
+                        My primary focus outside of strict managerial tasks was prototyping, design work, writing controls code, and documentation. 
+                        <br><br>
+                        As co-lead I trained underclassmen in CAD, C++, and machining, created organizational  documents and organized meetings outside of regular times to ensure readiness for competition.
+                        <br>
+                        I wrote over 100 pages of our ~170 page engineering notebook, which can be found here. 
+                        <br><br>
+                        The first iteration of the robot was small (under six inches tall), and featured a PTO between the catapult and the drive. 
+                        This allowed us to share motor power between the drive and the catapult, allowing for both a fast powerful drive, and a powerful catapult. 
+                        It had an intake, to pick up and manipulate individual game elements, wings to push large quantities of game elements, and sleds to pop the base over the center barrier. 
+                        <br><br>
+                        The second iteration was much taller, sitting at ~11 inches when folded and ~36 inches when blocking. 
+                        This iteration utilized a raised puncher to launch tribals across the field, a pneumatic blocker to block other teams from launching tribals, and a more effective intake, sleds, and wings. 
+                        It was designed around elevating to a B-tier but the robot simply was too heavy for the lifting mechanism.
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/vex-over-under/red-leds.jpg" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/vex-over-under/v1-red-leds.jpg", "../img/vex-over-under/v1-folded.png", "../img/vex-over-under/v2-blue-leds.jpg"]'
+                        data-captions='["Robot v1 with red LEDs", "Robot v1 folded", "Robot v2, ready for autonomous mode"]'>
+
+                        <img class="img-project enlargeable" src="../img/vex-over-under/v1-red-leds.jpg" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">Showcasing robot with red LEDs</p>
+                        <p class="img-caption">Robot v1 with red LEDs</p>
                     </div>
                 </section>
 
                 <section id="floating-turbine" class="project">
                     <h2>Floating Wind Turbine</h2>
-                    <p>
-                        With the increasing threat of global warming, now, more than ever, it is vital that we work to build clean, reliable energy sources. 
-                        UMaine had organized efforts to asked Maine students to design new methods of supporting wind turbines for further development in the gulf of Maine. 
-                        Our design features a long cylindrical base with a large weight on the bottom.
+                        <p>
+                            After passing several key climate change tipping points, now, more than ever, it is vital that we work to build clean and reliable energy sources. 
+                            UMaine has organized efforts to implore students to create new methods of supporting wind turbines for further development in the gulf of Maine. 
+                            We have a massive resource which could be used to power a substantial portion of Maine. 
+                            <br><br>
+                            My friend and I designed a spare styled wind turbine base. 
+                            My work on the project focused on creating several prototypes and learning hydrostatic fluids to find the optimal height, width, to weight ratio for maximum stability. 
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/wind-turbine/windstorm.jpg" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/wind-turbine/windstorm.jpg", "../img/wind-turbine/prototype.jpg", "../img/wind-turbine/base-in-car.jpg"]'
+                        data-captions='["Competing at UMaine&#39;s Windstorm Challenge", "Wind turbine base prototype", "Getting ready for competition!"]'>
+
+                        <img class="img-project enlargeable" src="../img/wind-turbine/windstorm.jpg" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">Wind turbine competing at UMaine&#39;s Windstorm Challenge</p>
+                        <p class="img-caption">Competing at UMaine&#39;s Windstorm Challenge</p>
                     </div>
                 </section>
                 
                 <section id="vex-spin-up" class="project">
-                    <h2>Vex Spin Under</h2>
+                    <div class="section-info">
+                        <h2>Vex Spin Up</h2>
+                        <a href="https://www.youtube.com/watch?v=wIZgvVDZc2Y" target="_blank" class="btn nowrap" >
+                            <i class="logo-icon" data-feather="youtube"></i>
+                            <p>Competition</p>
+                        </a>
+                    </div>
                     <p>
-                        Robot designed to compete in VEX&#39;s Spin Up Challenge. First iteration featured ratcheting 3000 rpm 4” flywheel, top loading hopper, and intake. 
-                        Second iteration featured 3600 rpm 3” two stage flywheel, bottom loading hopper, intake, roller, string launcher, sleds, and custom odometry for position tracking. 
-                        I specialised in the intake and hopper system and string launcher. 
+                        VRC is the world's largest competitive robotics league. 
+                        This year competing in the spin up challenge my team made it to semi-finals with a win rate of 93 percent. 
+                        My main responsibilities were storing discs, expansion, and documentation. 
+                        <br><br>
+                        This was the first year that my team conducted proper documentation and I spearheaded this initiative. 
+                        With success and momentum from last year we wanted every opportunity we could use to succeed, and one criteria to push forward was proper documentation.
+                        <br><br>
+                        Our first design featured a top loading hopper, 3000 rpm flywheel, and a mecanum drive for strafing. 
+                        It could shoot across the field but struggle shooting close up and the intake consistently clogged. 
+                        <br><br>
+                        Our second iterations featured a bottom loading hopper, 4 wheel intake, string launcher, sleds (for pushing discs), and custom odometry for position tracking. 
+                        This robot was significantly more competitive and the one we used to win the majority of our matches. 
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/vex-spin-up/disk.jpeg" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/vex-spin-up/3-crown.jpg", "../img/vex-spin-up/disk.jpeg", "../img/vex-spin-up/string.jpg"]'
+                        data-captions='["Robot with awards from one competition", "Robot launching disks", "Robot Launching String"]'>
+
+                        <img class="img-project enlargeable" src="../img/vex-spin-up/3-crown.jpg" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">Robot launching disks</p>
+                        <p class="img-caption">Robot with awards from one competition</p>
                     </div>
                 </section>
 
-                <section id="snake" class="project">
-                    <h2>Snake in Terminal</h2>
+                <section id="snake" class="project" style="display: none;">
+                    <div class="section-info">
+                        <h2>Snake in Unix Terminal</h2>
+                        <a href="https://github.com/nat-krah/snake-cpp" target="_blank" class="btn nowrap" >
+                            <i class="logo-icon" data-feather="github"></i>
+                            <p>Github</p>
+                        </a>
+                    </div>                    
                     <p>
                         As part of an effort to learn more c++ and to get more confortable using Unix Terminals, I decided to code the game snake from the ground up. 
                         I used limited resources, only looked at ansi escape codes, terminal flags, and c++ documentation. 
                         Basic code was ported over to JavaScript and can be played <a href="snake.html" style="text-decoration: underline;">here</a>.
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/snake/intro-sequence.png" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/snake/intro-sequence.png", "../img/snake/gameplay.png"]'
+                        data-captions='["Snake game intro Sequence", "Snake Gameplay"]'>
+
+                        <img class="img-project enlargeable" src="../img/snake/intro-sequence.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">Intro Sequence</p>
+                        <p class="img-caption">Snake game intro Sequence</p>
                     </div>
                 </section>
 
-                <section id="lunar-lander" class="project">
-                    <h2>Lunar Lander</h2>
+                <section id="lunar-lander" class="project" style="display: none;">
+                    <div class="section-info">
+                        <h2>Lunar lander</h2>
+                        <a href="https://github.com/nat-krah/lunar-lander" target="_blank" class="btn nowrap" >
+                            <i class="logo-icon" data-feather="github"></i>
+                            <p>Github</p>
+                        </a>
+                    </div>  
                     <p>
                         Final project from my MECE 117 programming for engineers class. 
                         We were tasked with writing a simple lunar lander game in MATLAB. My game features custom terrain generation and unique graphics. 
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/lunar-lander/playing.png" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/lunar-lander/playing.png", "../img/lunar-lander/landed.png"]'
+                        data-captions='["Lunar Lander Gameplay", "Lunar Lander Landed"]'>
+
+                        <img class="img-project enlargeable" src="../img/lunar-lander/playing.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">Gameplay</p>
+                        <p class="img-caption">Lunar Lander Gameplay</p>
                     </div>
                 </section>
 
                 <section id="chime-machine" class="project">
                     <h2>Chime Machine</h2>
                     <p>
-                        Final project for MECE 104, engineering design tools. 
-                        Tasked with designing a machine to play a selected song with chimes using limited resources. 
-                        Our design featured two seperate playing mechanisms: a cart with solenoids that was suspended over the chimes and cam driven "hammers"
-                        I was responsible for design and construction of the frame and writing all of the code.
+                        In my engineering design tools class, a group of engineers and I were tasked with designing a machine to play “Fallen Down” by Toby Fox. 
+                        <br><br>
+                        The design consisted of two separate playing mechanisms: a cart that was suspended and moved over the set of chimes, and two hammers resting on cams. 
+                        My main responsibility was building the frame and writing the code. 
+                        <br><br>
+                        The frame would have been fairly simple, if it didn&#39;t need to withstand the force of the suspended cart. 
+                        My design used custom laser cut pieces that secured larger structural beams. 
+                        The code was written in C++. The cart position was tracked with a potentiometer and used a custom PID loop. 
+                        <br><br>
+                        Our machine achieved a perfect score in design, execution, and functionality.
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/chime-machine/final-chime.JPG" alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/chime-machine/final-chime.JPG", "../img/chime-machine/frame-chime.JPG"]'
+                        data-captions='["Final Chime Machine", "Chime Machine Frame"]'>
+
+                        <img class="img-project enlargeable" src="../img/chime-machine/final-chime.JPG" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Final Chime Machine</p>
                     </div>
@@ -278,20 +413,24 @@ fix dropdown hide
                 <section id="sandy" class="project">
                     <h2>Sandy the Beach Cleanup Robot</h2>
                     <p>
-                        A challenge issued by Onshape challenged applicants to use vex materials to design a robot that would help the environment. 
-                        My robotics team and I decided to tackle ocean trash with a beach cleanup robot. It would sift large sections of the sand and deposit any trash into a removable bin. 
-                        I worked on the sifter and trash bin. 
+                        Challenged with designing an environment helping robot using vex materials. 
+                        My robotics team and I decided to focus on beach trash. 
+                        Beach cleanliness significantly impacts local wildlife and can introduce large quantities of trash into the oceans. 
+                        I focused on designing the sifting mechanism and the removable trash bin
                     </p>
-                    <div class="project-content">
-                        <img class="img-project enlargeable" src="../img/sandy/fronISO.png"  alt="Image of SPEX CubeSat" width="400px">
+
+                    <div class="project-content"
+                        data-images='["../img/sandy/fronISO.png","../img/sandy/backISO.png"]'
+                        data-captions='["CAD view 1", "CAD view 2"]'>
+
+                        <img class="img-project enlargeable" src="../img/sandy/fronISO.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">CAD view 1</p>
                     </div>
                 </section>
-
             </div>
         </main>
 
@@ -301,11 +440,11 @@ fix dropdown hide
         </div>
 
         <footer>
-            <ul>
-                <li><a href="../index.html"><i data-feather="home"></i></a></li>
-                <li><a href="https://github.com/nat-krah" target="_blank"><i data-feather="github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/nat-krah/" target="_blank"><i data-feather="linkedin"></i></a></li>
-                <li><a href="mailto:nicholaskrah1@gmail.com" target="_blank"><i data-feather="mail"></i></a></li>
+            <ul class="footer-items">
+                <li><a href="../index.html"><i data-feather="home" class="footer-icon"></i></a></li>
+                <li><a href="https://github.com/nat-krah" target="_blank"><i data-feather="github" class="footer-icon"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/nat-krah/" target="_blank"><i data-feather="linkedin" class="footer-icon"></i></a></li>
+                <li><a href="mailto:nicholaskrah1@gmail.com" target="_blank"><i data-feather="mail" class="footer-icon"></i></a></li>
             </ul>
         </footer>
     </div>
