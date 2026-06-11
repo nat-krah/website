@@ -1,0 +1,54 @@
+.wrapper{
+    background-color: red;
+    gap: 2rem;
+}
+
+main{
+    display: flex;
+    flex: row;
+    flex-wrap: nowrap;
+    background-color: orange;
+    gap: 2rem;
+}
+
+
+.color-select{
+    background-color: yellow;
+}
+
+
+
+.pallet-display{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /*width: 100%;*/
+    padding-right: 1rem;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-pallet-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.single-pallet-container{
+    
+}
+
+
+.single-pallet-container p{
+    text-align: center;
+}
+
+.pallet{
+    width: 5rem;
+    height: 3rem;
+    background-color: var(--bg);
+    border-radius: .75rem;
+}

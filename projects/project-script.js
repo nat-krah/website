@@ -183,3 +183,101 @@
         nextBtn.addEventListener('click', () => goTo(current + 1));
     });
 })();
+
+function typeScramble(element, onComplete) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    // Collect all text nodes inside the element, preserving structure
+    function getTextNodes(node) {
+        const nodes = [];
+        const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
+        let current;
+        while ((current = walker.nextNode())) {
+            if (current.textContent.trim()) nodes.push(current);
+        }
+        return nodes;
+    }
+
+    const textNodes = getTextNodes(element);
+
+    // Build a flat list of { node, index, finalChar } across all text nodes
+    const chars_to_reveal = [];
+    textNodes.forEach(node => {
+        const text = node.textContent;
+        // Blank out the node first
+        node._original = text;
+        node.textContent = '';
+        for (let i = 0; i < text.length; i++) {
+            chars_to_reveal.push({ node, index: i, finalChar: text[i] });
+        }
+    });
+
+    const totalChars = chars_to_reveal.length;
+    const totalDuration = Math.min(1200, 400 + totalChars * 18); // scale with length, cap at 1.2s
+    const frameRate = 30; // fps
+    const frameDuration = 1000 / frameRate;
+    const totalFrames = totalDuration / frameDuration;
+
+    // Track what's been "typed" so far per node
+    const nodeProgress = new Map();
+    textNodes.forEach(n => nodeProgress.set(n, ''));
+
+    let frame = 0;
+
+    const tick = setInterval(() => {
+        frame++;
+        const progress = frame / totalFrames; // 0 → 1
+        const resolvedCount = Math.floor(progress * totalChars);
+
+        // Reset all nodes to empty first
+        nodeProgress.forEach((_, node) => nodeProgress.set(node, ''));
+
+        // Fill in resolved characters (real) + one scramble character at the frontier
+        chars_to_reveal.forEach(({ node, index, finalChar }, i) => {
+            const current = nodeProgress.get(node);
+            if (i < resolvedCount) {
+                nodeProgress.set(node, current + finalChar);
+            } else if (i === resolvedCount) {
+                if (finalChar === ' ' || finalChar === '\n') {
+                    nodeProgress.set(node, current + finalChar);
+                } else {
+                    nodeProgress.set(node, current + chars[Math.floor(Math.random() * chars.length)]);
+                }
+            }
+            // Characters beyond frontier stay empty (not yet "typed")
+        });
+
+        // Write back to DOM
+        nodeProgress.forEach((text, node) => node.textContent = text);
+
+        if (frame >= totalFrames) {
+            clearInterval(tick);
+            // Guarantee clean final state
+            textNodes.forEach(node => node.textContent = node._original);
+            if (onComplete) onComplete();
+        }
+    }, frameDuration);
+}
+
+document.querySelectorAll('.project-description').forEach(section => {
+    const content = section.querySelector('.read-more-content');
+    const btn     = section.querySelector('.read-more-btn');
+
+    if (!content || !btn) return;
+
+    btn.addEventListener('click', () => {
+        console.log("askjdnakjsnd");
+        const isExpanded = content.style.display === 'block';
+
+        if (isExpanded) {
+            // Collapse — no animation needed, just hide
+            content.style.display = 'none';
+            btn.textContent = 'read more';
+        } else {
+            // Expand — show then animate
+            content.style.display = 'block';
+            btn.textContent = 'read less';
+            typeScramble(content);
+        }
+    });
+});

@@ -44,7 +44,6 @@
     setTheme(isLight ? "dark" : "light");
   });
 
-
   // =============================
   // About toggle
   // =============================
@@ -52,6 +51,7 @@
   const aboutSec = document.querySelector(".about");
   function toggleAbout(){
     aboutSec.classList.toggle("show");
+    body.classList.toggle("scrollable");
   }
 
   aboutbtn.addEventListener("click", () => {
@@ -60,8 +60,5 @@
   aboutSec.addEventListener("click", () => {
     toggleAbout();
   });
-
-
-
 })();
 

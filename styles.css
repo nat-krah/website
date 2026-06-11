@@ -1,11 +1,9 @@
-/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 :root {
-  /* type */
   --ff: "Manrope", sans-serif;
   --h1: 700 1.5rem/1.2em var(--ff);
   --h2: 700 1.25rem/1.4em var(--ff);
@@ -14,7 +12,7 @@
   --p: 400 1rem/1.6em var(--ff);
   --small: 400 0.75rem/1.6em var(--ff);
 }
-/* Base colors with CSS variables for easy theming*/
+
 :root {
   --bg-dark: hsl(209 100% 2%);
   --bg: hsl(196, 100%, 5%);
@@ -102,19 +100,18 @@ button, .btn{
   transition: var(--transition);
   border: none;
   border-radius: 8px;
+  color: var(--text);
 
   background-color: var(--bg);
   stroke: var(--text);
-}
-button:focus {
-  outline: none;
 }
 button:hover,
 .btn:hover{
   background: var(--bg-light);
   box-shadow: var(--shadow-m);
   transition: var(--transition);
-  stroke: var(--primary)
+  stroke: var(--primary);
+  color: var(--primary);
 }
 
 a {
@@ -198,7 +195,7 @@ header{
 
   background-color: none;
   border: none;
-  background-color: rgb(0,0,0,0); /*Should try to make this transparent*/
+  background-color: rgb(0,0,0,0);
   stroke: var(--text);
   color: var(--text);
 }
@@ -299,6 +296,10 @@ header{
   opacity: 1;
   pointer-events: all;
   cursor: pointer;
+}
+
+body.scrollable{
+  overflow: hidden;
 }
 
 .about-content{

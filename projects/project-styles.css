@@ -1,3 +1,7 @@
+body{
+    overflow:auto;
+}
+
 .wrapper{
     gap: 2rem;
 }
@@ -131,7 +135,6 @@ main{
 
 @media (max-width: 870px){
     .wrapper{
-        margin: 0;
         width: 100vw;
     }
 
@@ -194,12 +197,19 @@ section h2{
     margin-bottom: 3px;
 }
 
+.read-more-content {
+    display: none;
+}
+
+/*Info under text*/
 .project-content{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     gap: .75rem;
+
+    margin-top: .75rem;
 }
 
 .img-project{
@@ -214,21 +224,21 @@ section h2{
     border-radius: 12px;
 }
 
-.project-btn{
+/*image arrow btn*/
+.img-nav-btn{
     background-color: rgb(0,0,0,0);
     width: 30px;
     height: 30px;
     padding-top: 4px;
 }
-
 .prev-btn{
     margin-right: .75rem;
 }
-
 .project-btn:hover{
     background-color: var(--bg-light);
 }
 
+/*The links, positioning and sizing*/
 .section-info{
     display: flex;
     flex-direction: row;
@@ -236,28 +246,40 @@ section h2{
     align-items: center;
     gap: 1rem;
 }
-
 .section-info h2{
     padding: 0;
     margin: 0;
 }
-
 .section-info a{
     display: flex;
     flex-direction: row;
     gap: 5px;
-
-    padding: 5px;
-    padding-top: 8px;
 }
 
-.section-info a p{
+/*The btns making them look nice*/
+.section-btn{
+    padding: 5px;
+    padding-top: 6px;
+}
+.section-btn p{
     font: var(--h4);
     font-weight: lighter;
     margin: 0;
     color: inherit;
 }
 
+.read-more-btn{
+    background-color: var(--bg-light);
+}
+
+
+@media (max-width: 800px){
+    
+}
+.hide-small{
+    background-color: red;
+    display: none;
+}
 
 /*
 
