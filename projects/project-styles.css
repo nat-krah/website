@@ -29,7 +29,6 @@ main{
     position: absolute;
     top: 0;
     right: 1rem;
-    height: stretch;
     min-height: 100vh;
 
     pointer-events: none;
@@ -209,6 +208,12 @@ section h2{
 }
 .onshape-icon{
     fill: inherit;
+}
+
+@media (max-width: 600px){
+    .section-info p{
+        display: none;
+    }
 }
 
 

@@ -106,6 +106,12 @@
 
         if (images.length <= 1) return;
 
+        // Preload every image in this section so cycling feels instant
+        images.forEach(src => {
+            const preloadImg = new Image();
+            preloadImg.src = src;
+        });
+
         let current = 0;
 
         const img     = section.querySelector('.img-project');
@@ -137,6 +143,8 @@
     // Read more, gen text v2
     // =============================
     function typeScramble(element, onComplete) {
+        const chars = '!<>-_\\/[]{}—=+*^?#________';
+
         function getTextNodes(node) {
             const nodes = [];
             const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
@@ -220,3 +228,20 @@
         });
     });
 })();
+
+
+
+function syncSidebarHeight() {
+  const parent = document.querySelector('body'); // whatever element defines "full page height"
+  const sidebarMobile = document.querySelector('.sidebar-icon-mobile-container');
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.style.height = `${parent.scrollHeight}px`;
+  sidebarMobile.style.height = `${parent.scrollHeight}px`;
+}
+
+window.addEventListener('load', syncSidebarHeight);
+window.addEventListener('resize', syncSidebarHeight);
+
+// Also watch for content changes (images loading, dynamic content, etc.)
+const observer = new ResizeObserver(syncSidebarHeight);
+observer.observe(document.querySelector('.page-content'));
