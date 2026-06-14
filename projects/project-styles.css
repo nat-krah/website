@@ -201,6 +201,17 @@ section h2{
     display: none;
 }
 
+.onshape-icon-wrapper{
+    fill: var(--text);
+}
+.onshape-icon-wrapper:hover{
+    fill: var(--primary);
+}
+.onshape-icon{
+    fill: inherit;
+}
+
+
 /*Info under text*/
 .project-content{
     display: flex;
@@ -277,7 +288,6 @@ section h2{
     
 }
 .hide-small{
-    background-color: red;
     display: none;
 }
 

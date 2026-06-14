@@ -10,7 +10,7 @@
   --h3: 700 1.125rem/1.4em var(--ff);
   --h4: 700 1rem/1.4em var(--ff);
   --p: 400 1rem/1.6em var(--ff);
-  --small: 400 0.75rem/1.6em var(--ff);
+  --small: 400 0.75rem/1.4em var(--ff);
 }
 
 :root {

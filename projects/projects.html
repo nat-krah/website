@@ -5,11 +5,7 @@ Relevance
 Aplhabetical
 Sort by type of project
 
-Write LED Board
-
 redo images for cubesat
-
-make sure things don't wrap when thing is shrunk
 
 make nave buttons on images larger for mobile
 -->
@@ -36,12 +32,14 @@ make nave buttons on images larger for mobile
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="project-styles.css">
-    <script defer src="project-script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+
+    <script defer src="../scripts/image-enlarge.js"></script>
+    <script defer src="../scripts/light-dark-toggle.js"></script>
+    <script defer src="project-script.js"></script>
 </head>
 
 <body>
-
     <div class="wrapper">
         <header>
             <a href="../index.html">
@@ -78,8 +76,6 @@ make nave buttons on images larger for mobile
                 </div>
             </div>
 
-            <div class="temp"></div>
-
             <div class="project-list">
                 <h1>Projects</h1>
                 <p>A glipse into what I do</p>
@@ -91,8 +87,15 @@ make nave buttons on images larger for mobile
                             <i class="logo-icon" data-feather="github"></i>
                             <p>Github</p>
                         </a>
-                        <a href="https://github.com/Engineering-House/All-Seeing-Eye" target="_blank" class="btn nowrap hide-small section-btn" >
-                            <i class="logo-icon" data-feather="github"></i>
+                        <a href="https://rit.onshape.com/documents/d315db12e19ef341968bee84/w/e68e0609d778217c288e8294/e/e41b6d8fd1b6ef994fca696" target="_blank" class="btn nowrap section-btn onshape-icon-wrapper" >
+                            <svg class="onshape-icon feather" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" version="1.1" viewBox="380.1 179.5 258.9 298.6" width="500px">
+                                <polygon points="558.7 208.2 508.9 179.5 380.1 253.9 380.1 320.5 431.2 350.8 431.2 282 558.7 208.2"/>
+                                <polygon points="380.1 342.4 380.1 403.4 509.6 478.1 566.3 445.5 566.3 382.9 508.9 420.3 380.1 342.4"/>
+                                <polygon points="585.5 285.3 525.3 250.6 578.5 219.7 639 254.3 639 403.4 585.4 434.3 585.5 285.3"/>
+                                <polygon points="528.6 274.2 506.8 261.6 450.2 294.3 450.2 323.5 472.5 336.7 472.5 306.7 528.6 274.2"/>
+                                <polygon points="450.2 335.3 450.2 362 508.9 397.3 533.1 382.4 533.1 355.6 508.9 371 450.2 335.3"/>
+                                <polygon points="542.8 309.7 516 294.2 539.5 280.5 566.3 295.9 566.3 361.4 542.8 376.2 542.8 309.7"/>
+                            </svg>
                             <p>Onshape</p>
                         </a>
                     </div>
@@ -103,30 +106,28 @@ make nave buttons on images larger for mobile
                             As project lead I have reorganized efforts for a complete redesign of the tentacle structure, implementing the first design to work since the project's conception in 2022. 
                             Outside of leadership, I focused my efforts on perfecting the eye structure and writing controls code.
                             <br><br>
-                            As lead I organized meetings, created timelines, ordered parts, negotiated with RIT for a table at Maker Fair and Imagine RIT, and got people what they needed to be successful. 
-                            <br><br>
+                            As lead I organized meetings, created timelines, ordered parts, and negotiated with RIT for a table at Maker Fair and Imagine RIT.
                         </p>
-                        <div class="read-more-content">
-                            <p>
-                                The tentacle consists of 8 identical plates stacked on top of each other with TPU sections in between providing a “core.” 
-                                The tentacle uses three steppers connected to wires that pull the tentacle, similar to a marionette. 
-                                The eye was attached at the end of the tentacle, which could rotate independently of the tentacle and had eyelids that could blink. 
-                                The tentacle, eye, and camera were all connected to a raspberry pi that used a python script to read the camera feed and control the movement of each section. 
-                            </p>
-                        </div>
-                        <button id="special" class="section-btn btn read-more-btn"><p>Read more</p></button>
+                        <p class="read-more-content">
+                            <br>
+                            The tentacle consists of 8 identical plates stacked on each other, each section separated by a 3D printed TPU part. 
+                            To move the tentacle it is pulled by three wires connected to steppers. 
+                            The eye, attached to the final plate, can move independently of the tentacle and has a set of eyelids to blink. 
+                            The tentacle, eye, and camera are all connected to a raspberry pi that uses a python script to read the camera feed, use a computer vision model, and control the movement of each section. 
+                        </p>
                     </div>
 
                     <div class="project-content"
                         data-images='["../img/all-seeing-eye/new-eye.jpg", "../img/all-seeing-eye/eye-internals.jpg", "../img/all-seeing-eye/test-eye.JPG","../img/all-seeing-eye/old-eye.JPG"]'
                         data-captions='["All Seeing Eye prepared for Imagin RIT", "Interals of the eye", "New tentacle prototype","Old tentacle mechanism"]'>
-
+                        
+                        <button id="special" class="section-btn btn read-more-btn"><p>Read more</p></button>
                         <img class="img-project enlargeable" src="../img/all-seeing-eye/new-eye.jpg" alt="" width="400px">
                         <div class="nav-buttons">
                             <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
                             <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
-                        <p class="img-caption">All Seeing Eye at preparing for Imagine RIT</p>
+                        <p class="img-caption">All Seeing Eye preparing for Imagine RIT</p>
                     </div>
                 </section>
 
@@ -141,8 +142,8 @@ make nave buttons on images larger for mobile
 
                         <img class="img-project enlargeable" src="https://placehold.co/600x400" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">LED Board</p>
                     </div>
@@ -158,21 +159,24 @@ make nave buttons on images larger for mobile
                         As payload lead I made sure we were on-pace with the larger team. 
                         With little experience working with PCB design and radiation, I taught myself KiCad, elementary circuits, and the core concepts of radiation physics. 
                         Using this knowledge I trained my peers.
-                        <br><br>
+                    </p>
+                    <p class="read-more-content">
+                        <br>
                         The payload board consists of three main sections: the controller, the scintillating counter, and the geiger counter. 
-                        To record each event, compile the results, and manage the data, we would use the ATMEGA328. 
-                        It would connect to the greater Cubesat using a CAN bus. 
-                        The geiger counter would follow a standard low-power handheld setup and the scintillating counter was modeled after <a href="http://www.cosmicwatch.lns.mit.edu/detector" class="in-text-link" target="_blank">Comic Watch&#39;s desktop muon detector</a>. 
+                        To record each event, compile the results, and manage the data, we use an arduino nano, and on the final board would simply use the ATMEGA328. 
+                        The chip would connect to the greater Cubesat using a CAN bus. 
+                        The geiger counter followed a standard low-power handheld setup and the scintillating counter was modeled after <a href="http://www.cosmicwatch.lns.mit.edu/" class="in-text-link" target="_blank">Comic Watch&#39;s desktop muon detector</a>. 
                     </p>
 
                     <div class="project-content"
                         data-images='[]'
                         data-captions='["Terminal with fast fetch", "Hyprland Desktop"]'>
 
+                        <button id="special" class="section-btn btn read-more-btn"><p>Read more</p></button>
                         <img class="img-project enlargeable" src="../img/cubesat/spex-hab-space.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Image from SPEX High Altitude Balloon</p>
                     </div>
@@ -197,8 +201,8 @@ make nave buttons on images larger for mobile
 
                         <img class="img-project enlargeable" src="../img/ballista/ballista2.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Final ballista design</p>
                     </div>
@@ -207,7 +211,7 @@ make nave buttons on images larger for mobile
                 <section id="website" class="project">
                     <div class="section-info">
                         <h2>Personal Website</h2>
-                        <a href="https://github.com/nat-krah/website" target="_blank" class="btn nowrap" >
+                        <a href="https://github.com/nat-krah/website" target="_blank" class="btn nowrap section-btn" >
                             <i class="logo-icon" data-feather="github"></i>
                             <p>Github</p>
                         </a>
@@ -218,7 +222,8 @@ make nave buttons on images larger for mobile
                         Both were designed to showcase my projects over the years as I&#39;ve developed technically, and were built from the ground up using HTML, CSS, and Javascript. 
                         <br><br>
                         I chose to write the code myself, rather than use a website builder, because I wanted to understand the inner workings of webpages. 
-                        I want to know as much of the technical world around me as possible. It has been fascinating to be able to peer into the construction of websites and understand how elements were created and modified. 
+                        I want to know as much of the technical world around me as possible. 
+                        It has been fascinating to peer behind the front of websites and see their construction and understand how elements are created and modified. 
                     </p>
 
                     <div class="project-content"
@@ -227,8 +232,8 @@ make nave buttons on images larger for mobile
 
                         <img class="img-project enlargeable" src="../img/website-images/previous.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Old homepage</p>
                     </div>
@@ -237,13 +242,9 @@ make nave buttons on images larger for mobile
                 <section id="vex-over-under" class="project">
                     <div class="section-info">
                         <h2>Vex Over Under</h2>
-                        <a href="https://docs.google.com/presentation/d/1QLLU6wRsXruq7wP_DeBp-vIeSC1auTgN/edit?usp=sharing&ouid=118344373854695580405&rtpof=true&sd=true" target="_blank" class="btn nowrap logo-icon" >
+                        <a href="https://docs.google.com/presentation/d/1QLLU6wRsXruq7wP_DeBp-vIeSC1auTgN/edit?usp=sharing&ouid=118344373854695580405&rtpof=true&sd=true" target="_blank" class="btn nowrap logo-icon section-btn">
                             <i data-feather="book-open"></i>
                             <p> Documentation</p>
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=dvDqEI7qO34" target="_blank" class="btn nowrap logo-icon hide-small">
-                            <i data-feather="youtube"></i>
-                            <p>Competition</p>
                         </a>
                     </div>
 
@@ -252,12 +253,16 @@ make nave buttons on images larger for mobile
                         In my senior year of high school I co-lead my robotics team to the state semi-finals. 
                         My primary focus outside of strict managerial tasks was prototyping, design work, writing controls code, and documentation. 
                         <br><br>
-                        As co-lead I trained underclassmen in CAD, C++, and machining, created organizational  documents and organized meetings outside of regular times to ensure readiness for competition.
+                        As co-lead I trained underclassmen in CAD, C++, and machining, created organizational documents and meetings outside of regular times to ensure readiness for competition.
                         <br>
-                        I wrote over 100 pages of our ~170 page engineering notebook, which can be found here. 
-                        <br><br>
-                        The first iteration of the robot was small (under six inches tall), and featured a PTO between the catapult and the drive. 
-                        This allowed us to share motor power between the drive and the catapult, allowing for both a fast powerful drive, and a powerful catapult. 
+                        I wrote over 100 pages of our ~170 page engineering notebook, which can be found <a href="https://docs.google.com/presentation/d/1QLLU6wRsXruq7wP_DeBp-vIeSC1auTgN/edit?usp=sharing&ouid=118344373854695580405&rtpof=true&sd=true" class="in-text-link" target="_blank">here</a>. 
+                        <br>
+                        Each part was designed in OnShape, prototype parts were 3D printed, final precision parts were run off a 3 axis CNC mill, operated by me.
+                    </p>
+                    <p class="read-more-content">
+                        <br>
+                        The first iteration of the robot was small (under six inches tall), and featured a pneumatic two speed transmission between the catapult and drive. 
+                        This allowed us to share power between the two systems and granted us both a fast powerful drive, and a powerful catapult. 
                         It had an intake, to pick up and manipulate individual game elements, wings to push large quantities of game elements, and sleds to pop the base over the center barrier. 
                         <br><br>
                         The second iteration was much taller, sitting at ~11 inches when folded and ~36 inches when blocking. 
@@ -269,10 +274,11 @@ make nave buttons on images larger for mobile
                         data-images='["../img/vex-over-under/v1-red-leds.jpg", "../img/vex-over-under/v1-folded.png", "../img/vex-over-under/v2-blue-leds.jpg"]'
                         data-captions='["Robot v1 with red LEDs", "Robot v1 folded", "Robot v2, ready for autonomous mode"]'>
 
+                        <button id="special" class="section-btn btn read-more-btn"><p>Read more</p></button>
                         <img class="img-project enlargeable" src="../img/vex-over-under/v1-red-leds.jpg" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Robot v1 with red LEDs</p>
                     </div>
@@ -285,8 +291,8 @@ make nave buttons on images larger for mobile
                             UMaine has organized efforts to implore students to create new methods of supporting wind turbines for further development in the gulf of Maine. 
                             We have a massive resource which could be used to power a substantial portion of Maine. 
                             <br><br>
-                            My friend and I designed a spare styled wind turbine base. 
-                            My work on the project focused on creating several prototypes and learning hydrostatic fluids to find the optimal height, width, to weight ratio for maximum stability. 
+                            A group of friends and I decided to compete in UMaine's competition. 
+                            We designed a spar styled wind turbine base. My work focused on creating several prototypes and learning hydrostatic fluid to find the optimal height, width, to weight ratio for maximum stability. 
                     </p>
 
                     <div class="project-content"
@@ -295,8 +301,8 @@ make nave buttons on images larger for mobile
 
                         <img class="img-project enlargeable" src="../img/wind-turbine/windstorm.jpg" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Competing at UMaine&#39;s Windstorm Challenge</p>
                     </div>
@@ -305,19 +311,21 @@ make nave buttons on images larger for mobile
                 <section id="vex-spin-up" class="project">
                     <div class="section-info">
                         <h2>Vex Spin Up</h2>
-                        <a href="https://www.youtube.com/watch?v=wIZgvVDZc2Y" target="_blank" class="btn nowrap" >
+                        <a href="https://www.youtube.com/watch?v=wIZgvVDZc2Y" target="_blank" class="btn nowrap section-btn">
                             <i class="logo-icon" data-feather="youtube"></i>
                             <p>Competition</p>
                         </a>
                     </div>
                     <p>
                         VRC is the world's largest competitive robotics league. 
-                        This year competing in the spin up challenge my team made it to semi-finals with a win rate of 93 percent. 
-                        My main responsibilities were storing discs, expansion, and documentation. 
+                        In 2022, my team made it to the State semi-finals with a win rate of 92 percent (24 wins 2 losses). 
+                        My main responsibilities focused on storing discs, expansion, and documentation. 
                         <br><br>
                         This was the first year that my team conducted proper documentation and I spearheaded this initiative. 
                         With success and momentum from last year we wanted every opportunity we could use to succeed, and one criteria to push forward was proper documentation.
-                        <br><br>
+                    </p>
+                    <p class="read-more-content">
+                        <br>
                         Our first design featured a top loading hopper, 3000 rpm flywheel, and a mecanum drive for strafing. 
                         It could shoot across the field but struggle shooting close up and the intake consistently clogged. 
                         <br><br>
@@ -329,10 +337,11 @@ make nave buttons on images larger for mobile
                         data-images='["../img/vex-spin-up/3-crown.jpg", "../img/vex-spin-up/disk.jpeg", "../img/vex-spin-up/string.jpg"]'
                         data-captions='["Robot with awards from one competition", "Robot launching disks", "Robot Launching String"]'>
 
+                        <button id="special" class="section-btn btn read-more-btn"><p>Read more</p></button>
                         <img class="img-project enlargeable" src="../img/vex-spin-up/3-crown.jpg" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Robot with awards from one competition</p>
                     </div>
@@ -341,7 +350,7 @@ make nave buttons on images larger for mobile
                 <section id="snake" class="project" style="display: none;">
                     <div class="section-info">
                         <h2>Snake in Unix Terminal</h2>
-                        <a href="https://github.com/nat-krah/snake-cpp" target="_blank" class="btn nowrap" >
+                        <a href="https://github.com/nat-krah/snake-cpp" target="_blank" class="btn nowrap section-btn">
                             <i class="logo-icon" data-feather="github"></i>
                             <p>Github</p>
                         </a>
@@ -358,8 +367,8 @@ make nave buttons on images larger for mobile
 
                         <img class="img-project enlargeable" src="../img/snake/intro-sequence.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Snake game intro Sequence</p>
                     </div>
@@ -368,7 +377,7 @@ make nave buttons on images larger for mobile
                 <section id="lunar-lander" class="project" style="display: none;">
                     <div class="section-info">
                         <h2>Lunar lander</h2>
-                        <a href="https://github.com/nat-krah/lunar-lander" target="_blank" class="btn nowrap" >
+                        <a href="https://github.com/nat-krah/lunar-lander" target="_blank" class="btn nowrap section-btn">
                             <i class="logo-icon" data-feather="github"></i>
                             <p>Github</p>
                         </a>
@@ -384,8 +393,8 @@ make nave buttons on images larger for mobile
 
                         <img class="img-project enlargeable" src="../img/lunar-lander/playing.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Lunar Lander Gameplay</p>
                     </div>
@@ -412,8 +421,8 @@ make nave buttons on images larger for mobile
 
                         <img class="img-project enlargeable" src="../img/chime-machine/final-chime.JPG" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">Final Chime Machine</p>
                     </div>
@@ -422,10 +431,10 @@ make nave buttons on images larger for mobile
                 <section id="sandy" class="project">
                     <h2>Sandy the Beach Cleanup Robot</h2>
                     <p>
-                        Challenged with designing an environment helping robot using vex materials. 
+                        Challenged with designing a robot to help the environment using COTS and vex materials. 
                         My robotics team and I decided to focus on beach trash. 
                         Beach cleanliness significantly impacts local wildlife and can introduce large quantities of trash into the oceans. 
-                        I focused on designing the sifting mechanism and the removable trash bin
+                        I focused on designing the sifting mechanism and the removable trash bin.
                     </p>
 
                     <div class="project-content"
@@ -434,19 +443,14 @@ make nave buttons on images larger for mobile
 
                         <img class="img-project enlargeable" src="../img/sandy/fronISO.png" alt="" width="400px">
                         <div class="nav-buttons">
-                            <button class="project-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
-                            <button class="project-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
+                            <button class="img-nav-btn prev-btn"><i class="logo-icon" data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i class="logo-icon" data-feather="arrow-right"></i></button>
                         </div>
                         <p class="img-caption">CAD view 1</p>
                     </div>
                 </section>
             </div>
         </main>
-
-        <!--Background for when images are enlarged-->
-        <div id="imageOverlay">
-            <img id="overlayImage" src="" alt="Enlarged view">
-        </div>
 
         <footer>
             <ul class="footer-items">
@@ -456,6 +460,11 @@ make nave buttons on images larger for mobile
                 <li><a href="mailto:nicholaskrah1@gmail.com" target="_blank"><i data-feather="mail" class="footer-icon"></i></a></li>
             </ul>
         </footer>
+    </div>
+
+    <!--Background for when images are enlarged-->
+    <div id="imageOverlay">
+        <img id="overlayImage" src="" alt="Enlarged view">
     </div>
     
 
