@@ -1,15 +1,12 @@
 // =============================
-// About toggle
+// About overlay toggle
 // =============================
-const aboutbtn = document.getElementById("aboutBtn");
+const aboutBtn = document.getElementById("aboutBtn");
 const aboutSec = document.querySelector(".about");
-function toggleAbout(){
-  aboutSec.classList.toggle("show");
+
+function toggleAbout() {
+    aboutSec.classList.toggle("show");
 }
 
-aboutbtn.addEventListener("click", () => {
-  toggleAbout();
-});
-aboutSec.addEventListener("click", () => {
-  toggleAbout();
-});
+aboutBtn.addEventListener("click", toggleAbout);
+aboutSec.addEventListener("click", toggleAbout);

@@ -1,18 +1,14 @@
 // =============================
-// Light/dark mode toggle
+// Light / dark mode toggle
 // =============================
-const body = document.body;
+const body      = document.body;
 const toggleBtn = document.querySelector("#theme-toggle");
 const THEME_KEY = "theme";
 
-// Get system preference
 function getSystemTheme() {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-  ? "light"
-  : "dark";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark";
 }
 
-// Apply theme class to body
 function applyTheme(theme) {
   if (theme === "dark") {
     body.classList.add("dark");
@@ -21,23 +17,24 @@ function applyTheme(theme) {
   }
 }
 
-// Get preferred theme (localStorage > system)
 function getPreferredTheme() {
-  return localStorage.getItem(THEME_KEY)/* || getSystemTheme()*/;
+  if (localStorage.getItem(THEME_KEY) != null){
+    return localStorage.getItem(THEME_KEY)
+  } else{
+    return getSystemTheme();
+  }
 }
 
-// Set theme and persist
 function setTheme(theme) {
   applyTheme(theme);
   localStorage.setItem(THEME_KEY, theme);
 }
 
-// Initialize theme on load
+// Initialise on load
 setTheme(getPreferredTheme());
 
-// Toggle theme on button click
+// Toggle on button click
 toggleBtn.addEventListener("click", () => {
-  const isLight = body.classList.contains("dark");
-  console.log(isLight);
-  setTheme(isLight ? "light" : "dark");
+  const isDark = body.classList.contains("dark");
+  setTheme(isDark ? "light" : "dark");
 });

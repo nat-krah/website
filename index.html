@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- keywords used when searching for website-->
     <meta name="keywords" content="personal website">
+    <meta name="author" content="Nat Krah">
 
-    <!--Author of code-->
-    <meta name="Author" content="Nat Krah">
-
-    <!--Title of webpage-->
     <title>nat-krah</title>
 
-    <!--Add an faveicon-->
-    <link rel="icon" href="assets/faveicon.svg" sizes="any" >
-    <link id="faveicon" rel="icon" href="assets/faveicon.svg" type="image/svg+xml">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/faveicon.svg" type="image/svg+xml">
 
-    <!--Linking the css and js file-->
+    <!-- Styles & scripts -->
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <script defer src="scripts/light-dark-toggle.js"></script>
@@ -25,38 +19,38 @@
 </head>
 
 <body>
-
     <div class="wrapper">
         <header>
-            <a href="index.html">
-                <button id="homeselect" class="home btn" aria-label="nat-krah">
-                    <i class="home-icon" data-feather="settings"></i>
-                    <h1 class="home-text">nat-krah</h1>
-                </button>
+            <a href="index.html" class="home btn">
+                <i class="home-icon" data-feather="settings"></i>
+                <h1 class="home-text">nat-krah</h1>
             </a>
-            <button id="theme-toggle" aria-label="Toggle Theme">
-                <i data-feather="power"></i>
-            </button>
+            <a id="theme-toggle" class="btn">
+                <i data-feather="power" class="theme-toggle-icon"></i>
+            </a>
         </header>
 
         <main>
+            <!-- About overlay -->
             <div class="about">
                 <div class="about-content">
                     <h2>About</h2>
                     <img src="img/mainPhoto.webp" alt="Nat Krah" id="about-image" width="300">
                     <div class="flex-center">
                         <p>
-                            Hi! <br> 
-                            I'm Nat, a third-year mechanical engineering student at RIT, pursuing a master's degree with a dual focus in aerospace and computer engineering. 
-                            From building Lego robots in elementary school, to programming CNC mills for precision parts in high school, to leading the construction of a soft-body robotic tentacle. 
+                            Hi! <br>
+                            I'm Nat, a third-year mechanical engineering student at RIT, pursuing a master's degree with a dual focus in aerospace and computer engineering.
+                            From building Lego robots in elementary school, to programming CNC mills for precision parts in high school, to leading the construction of a soft-body robotic tentacle.
                             My life has been a series of projects, and this website is an attempt to document its highlights.
                             <br><br>
-                            Throughout my life I have been fascinated by the technical world around me, and have loved learning everything I can. 
-                            I have pushed myself to pursue as many engineering areas as possible and focused on being interdisciplinary. 
+                            Throughout my life I have been fascinated by the technical world around me, and have loved learning everything I can.
+                            I have pushed myself to pursue as many engineering areas as possible and focused on being interdisciplinary.
                         </p>
                     </div>
-                </div>    
+                </div>
             </div>
+
+            <!-- Navigation cards -->
             <div class="cards">
                 <div id="aboutBtn" class="card btn">
                     <h3>About</h3>
@@ -68,20 +62,16 @@
                         <p>A glimpse into what I do</p>
                     </a>
                 </div>
-
-                <!--What would be cool is to include buttons for pdf, html, certificats-->
                 <div class="card btn">
-                    <a href="assets/Nat Krah Resume - June.pdf" target="_blank">
+                    <a href="assets/Nat Krah Resume.pdf" target="_blank">
                         <h3>Resume</h3>
-                        <p>My Experience and skills</p>
+                        <p>My experience and skills</p>
                     </a>
                 </div>
-
                 <div class="card btn">
                     <h3>Website Customization</h3>
                     <p>Coming soon</p>
                 </div>
-                </ul>
             </div>
         </main>
 
@@ -89,13 +79,11 @@
             <ul class="footer-items">
                 <li><a href="https://github.com/nat-krah" target="_blank"><i data-feather="github" class="footer-icon"></i></a></li>
                 <li><a href="https://www.linkedin.com/in/nat-krah/" target="_blank"><i data-feather="linkedin" class="footer-icon"></i></a></li>
-                <li><a href="mailto:nicholaskrah1@gmail.com" target="_blank"><i data-feather="mail" class="footer-icon"></i></a></li>
+                <li><a href="mailto:nmk9990@rit.edu" target="_blank"><i data-feather="mail" class="footer-icon"></i></a></li>
             </ul>
         </footer>
-    </div>    
+    </div>
 
-    <script>
-      feather.replace();
-    </script>
+    <script>feather.replace();</script>
 </body>
 </html>

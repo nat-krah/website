@@ -1,88 +1,69 @@
-body{
-    overflow:auto;
-}
-
-.wrapper{
+.wrapper {
     gap: 2rem;
 }
 
-main{
+main {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: flex-start;
-
     gap: 1rem;
     position: relative;
 }
 
-
-/********************************************************************************\
-*                                                                                *
-*                                    Sidebar                                     *
-*                                                                                *
-\********************************************************************************/
-
+/* ============================================================ *\
+ * Sidebar
+\* ============================================================ */
 
 /*Mobil dropdown*/
-.sidebar-icon-mobile-container{
+.sidebar-icon-mobile-container {
     position: absolute;
     top: 0;
     right: 1rem;
     min-height: 100vh;
-
+    margin: 1rem;
     pointer-events: none;
 }
 
-.sidebar-icon-mobile{
+.sidebar-icon-mobile {
     position: sticky;
-
     top: 40px;
-
     width: 40px;
     height: 40px;
     border-radius: 18px;
     padding: 5px;
-
     z-index: 1;
-
-    pointer-events: all; /*check that this woks*/
-
+    pointer-events: all;
     background-color: var(--bg-light);
     box-shadow: var(--shadow-s);
-
     display: none;
 }
 
 
 /*Main sidebar*/
-.sidebar{
+.sidebar {
     height: stretch;
     min-height: 100vh;
-
     pointer-events: none;
 }
 
-.sidebar-nav-container{
+.sidebar-nav-container {
     position: sticky;
     top: 40px;
-
     display: flex;
     flex-direction: row;
     pointer-events: all;
 }
 
-.sidebar-nav{
+.sidebar-nav {
     display: flex;
     flex-direction: column;
-    
     width: 10vw;
     min-width: 18ch;
-
     white-space: nowrap;
 }
 
-.sidebar-nav a{
+.sidebar-nav a {
     display: flex;
     align-items: center;
     position: relative;
@@ -90,80 +71,78 @@ main{
     height: 1.5rem;
     margin-bottom: 1rem;
 }
-.sidebar-nav a:last-child{
-    margin: 0;
+.sidebar-nav a:last-child {
+    margin-bottom: 0;
 }
 
-.sidebar-nav a:hover{
-    position: relative;
+.sidebar-nav a:hover {
     transform: translateX(0.5rem);
     color: var(--primary);
 }
+
 .sidebar-nav a::after {
     content: "";
     position: absolute;
-    width: .5rem;
+    width: 0.5rem;
     height: 2px;
     top: 50%;
     left: 0;
     background: var(--text);
     transition: var(--transition);
 }
-.sidebar-nav a:hover::after{
+
+.sidebar-nav a:hover::after {
     width: 1rem;
     left: -0.5rem;
     background: var(--primary);
-    transition: var(--transition);
 }
 
-.sidebar .feather{
+.sidebar .feather {
     width: 2rem;
     height: 2rem;
     stroke-width: 1.5;
 }
 
-.sidebar-nav p{
+.sidebar-nav p {
     color: inherit;
     font: var(--p);
 }
 
-.sidebar-nav.sidebar-collapsed{
+.sidebar-nav.sidebar-collapsed {
     display: none;
 }
 
 
-@media (max-width: 870px){
-    .wrapper{
+@media (max-width: 870px) {
+    .wrapper {
         width: 100vw;
     }
 
-    #hide-side{
+    #hide-side {
         display: none;
     }
 
-    .sidebar{
+    .sidebar {
         position: absolute;
         right: 1.5rem;
         top: 25px;
     }
 
-    .sidebar-icon-mobile{
+    .sidebar-icon-mobile {
         display: inline;
     }
 
-    .sidebar-nav-container{
+    .sidebar-nav-container {
         top: 65px;
     }
 
-    .sidebar-nav{
+    .sidebar-nav {
         display: none;
     }
 
-    .sidebar-nav.mobile-show{
+    .sidebar-nav.mobile-show {
         display: flex;
-
         background-color: var(--bg-light);
-        
         border-radius: 10px;
         padding: 15px;
         box-shadow: var(--shadow-s);
@@ -171,54 +150,82 @@ main{
     }
 }
 
+/* ============================================================ *\
+ * Projects
+\* ============================================================ */
 
-
-/********************************************************************************\
-*                                                                                *
-*                                    Projects                                    *
-*                                                                                *
-\********************************************************************************/
-
-section{
+section {
     background-color: var(--bg);
-    margin: 2rem 0 1rem 0;
-    padding: 1.5rem;
-    padding-top: 1rem;
+    margin: 2rem 0 1rem;   
+    padding: 1rem 1.5rem 1.5rem;
     border-radius: 1rem;
-    
     display:flex;   
     flex-direction: column;
     align-items: flex-start;
     box-shadow: var(--shadow-s);
 }
 
-section h2{
-    margin-bottom: 3px;
-}
-
 .read-more-content {
     display: none;
 }
 
-.onshape-icon-wrapper{
+/*The links; positioning and sizing*/
+.section-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.section-info h2 {
+    padding: 0;
+    margin: 0;
+}
+.section-info a {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+@media (max-width: 600px) {
+    .section-info p{
+        display: none;
+    }
+}
+
+/*The btns; make them look nice*/
+.section-btn {
+    padding: 5px;
+    padding-top: 6px;
+}
+
+.section-btn p {
+    font: var(--h4);
+    font-weight: lighter;
+    margin: 0;
+    color: inherit;
+}
+
+.read-more-btn {
+    background-color: var(--bg-light);
+}
+
+/*onshape icon*/
+.onshape-icon-wrapper {
     fill: var(--text);
 }
-.onshape-icon-wrapper:hover{
+.onshape-icon-wrapper:hover {
     fill: var(--primary);
 }
 .onshape-icon{
     fill: inherit;
 }
 
-@media (max-width: 600px){
-    .section-info p{
-        display: none;
-    }
-}
-
+/* ============================================================ *\
+ * Project image + carousel
+\* ============================================================ */
 
 /*Info under text*/
-.project-content{
+.project-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,7 +235,7 @@ section h2{
     margin-top: .75rem;
 }
 
-.img-project{
+.img-project {
     border: 3px solid var(--primary);
     max-width:75%;
     max-height: 500px;
@@ -240,86 +247,13 @@ section h2{
     border-radius: 12px;
 }
 
-/*image arrow btn*/
-.img-nav-btn{
+/*arrow btn*/
+.img-nav-btn {
     background-color: rgb(0,0,0,0);
     width: 30px;
     height: 30px;
     padding-top: 4px;
 }
-.prev-btn{
+.prev-btn {
     margin-right: .75rem;
 }
-.project-btn:hover{
-    background-color: var(--bg-light);
-}
-
-/*The links, positioning and sizing*/
-.section-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-.section-info h2{
-    padding: 0;
-    margin: 0;
-}
-.section-info a{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-/*The btns making them look nice*/
-.section-btn{
-    padding: 5px;
-    padding-top: 6px;
-}
-.section-btn p{
-    font: var(--h4);
-    font-weight: lighter;
-    margin: 0;
-    color: inherit;
-}
-
-.read-more-btn{
-    background-color: var(--bg-light);
-}
-
-
-@media (max-width: 800px){
-    
-}
-.hide-small{
-    display: none;
-}
-
-/*
-
-Design for mobil
-https://www.youtube.com/watch?v=y5N-dtzAC-E
-
-@media (pointer: coarse) and (hover: none) {
-
-
-}
-
-
-@media (max-width: 870px) {
-    .project-btn{
-        width: 35px;
-        height: 35px;
-    }
-
-    .project-btn .feather{
-        width: 20px;
-        height: 20px;
-    }
-
-    .prev-btn{
-        margin-right: 3rem;
-    }
-}
-*/

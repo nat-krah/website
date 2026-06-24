@@ -1,37 +1,11 @@
 (function () {
-    const overlay = document.getElementById('imageOverlay');
-    const overlayImage = document.getElementById('overlayImage');
-    const enlargeableImages = document.querySelectorAll('.enlargeable');
-
-    overlay.style.display = 'none';
-
-    //Open overlay on button click
-    enlargeableImages.forEach(img =>{
-        img.addEventListener('click', ()=>{
-            overlay.style.display = 'flex';
-            overlayImage.src = img.src;
-            document.body.style.overflow = 'hidden';
-        })
-    })
-
-    //Close overlay
-    overlay.addEventListener('click', closeOverlay);
-    document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") closeOverlay();
-    });
-
-    function closeOverlay(){
-        overlay .style.display = 'none';
-        overlayImage.src = '';
-        document.body.style.overflow = '';
-    }
 
     // =============================
-    // Hide Side 
+    // Hide sidebar (desktop toggle)
     // =============================
     const sidebarContainer = document.querySelector(".sidebar-nav");
 
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (e.target.closest('#hide-side')) {
             sidebarContainer.classList.toggle("sidebar-collapsed");
 
@@ -43,24 +17,26 @@
         }
     });
 
+
     // =============================
-    // Hide nav mobile
+    // Hide nav on mobile
     // =============================
     const dropdown = document.querySelector(".sidebar-nav");
     const dropdownBtn = document.querySelector(".sidebar-icon-mobile");
     let shown = false;
 
-    body.addEventListener("click", () => {
+    body.addEventListener("click", (event) => {
         if (event.target.closest(".sidebar") == null && !(event.target.classList.contains("sidebar-icon-mobile"))) {
+            dropdown.classList.remove("mobile-show");
             shown = false;
         }
     });
 
     dropdownBtn.addEventListener("click", () => {
-        if (shown){
+        if (shown) {
             dropdown.classList.remove("mobile-show");
             shown = false;
-        } else{
+        } else {
             dropdown.classList.add("mobile-show");
             shown = true;
         }
@@ -71,24 +47,21 @@
     // Cycle images
     // =============================
     function scrambleText(element, newText) {
-        const chars = '!<>-_\\/[]{}—=+*^?#________';
+        const chars    = '!<>-_\\/[]{}—=+*^?#________';
         const duration = 600;   // total animation time in ms
-        const steps = 18;       // number of scramble frames
+        const steps    = 18;    // number of scramble frames
         const interval = duration / steps;
-
         let frame = 0;
 
         const tick = setInterval(() => {
             frame++;
-            const progress = frame / steps;  
+            const progress = frame / steps;
 
             element.textContent = newText
                 .split('')
                 .map((char, i) => {
                     if (char === ' ') return ' ';
-                    // Characters to the left of the resolve frontier show their real value
                     if (i / newText.length < progress) return char;
-                    // Characters still scrambling show a random glyph
                     return chars[Math.floor(Math.random() * chars.length)];
                 })
                 .join('');
@@ -101,16 +74,13 @@
     }
 
     document.querySelectorAll('.project-content').forEach(section => {
-        const images   = JSON.parse(section.dataset.images   || '[]');
+        const images   = JSON.parse(section.dataset.img      || '[]');
         const captions = JSON.parse(section.dataset.captions || '[]');
 
         if (images.length <= 1) return;
 
-        // Preload every image in this section so cycling feels instant
-        images.forEach(src => {
-            const preloadImg = new Image();
-            preloadImg.src = src;
-        });
+        // Preload all images so cycling feels instant
+        images.forEach(src => { new Image().src = src; });
 
         let current = 0;
 
@@ -127,7 +97,6 @@
             setTimeout(() => {
                 img.src = images[current];
                 img.alt = captions[current] ?? '';
-
                 img.style.opacity = '1';
             }, 300);
 
@@ -137,16 +106,16 @@
         prevBtn.addEventListener('click', () => goTo(current - 1));
         nextBtn.addEventListener('click', () => goTo(current + 1));
     });
-    
+
 
     // =============================
-    // Read more, gen text v2
+    // Read more btn
     // =============================
     function typeScramble(element, onComplete) {
         const chars = '!<>-_\\/[]{}—=+*^?#________';
 
         function getTextNodes(node) {
-            const nodes = [];
+            const nodes  = [];
             const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
             let current;
             while ((current = walker.nextNode())) {
@@ -160,18 +129,18 @@
         const chars_to_reveal = [];
         textNodes.forEach(node => {
             const text = node.textContent;
-            node._original = text;
+            node._original   = text;
             node.textContent = '';
             for (let i = 0; i < text.length; i++) {
                 chars_to_reveal.push({ node, index: i, finalChar: text[i] });
             }
         });
 
-        const totalChars = chars_to_reveal.length;
+        const totalChars    = chars_to_reveal.length;
         const totalDuration = Math.min(1800, 400 + totalChars * 18);
-        const frameRate = 120;
+        const frameRate     = 120;
         const frameDuration = 1000 / frameRate;
-        const totalFrames = totalDuration / frameDuration;
+        const totalFrames   = totalDuration / frameDuration;
 
         const nodeProgress = new Map();
         textNodes.forEach(n => nodeProgress.set(n, ''));
@@ -180,7 +149,7 @@
 
         const tick = setInterval(() => {
             frame++;
-            const progress = frame / totalFrames;
+            const progress      = frame / totalFrames;
             const resolvedCount = Math.floor(progress * totalChars);
 
             nodeProgress.forEach((_, node) => nodeProgress.set(node, ''));
@@ -227,21 +196,37 @@
             }
         });
     });
+
+
+    // =============================
+    // Sync sidebar height to content
+    // =============================
+    function syncSidebarHeight() {
+        const sidebarMobile = document.querySelector('.sidebar-icon-mobile-container');
+        const sidebar       = document.querySelector('.sidebar');
+        const pageContent   = document.querySelector('.project-list');
+
+        if (!sidebar || !sidebarMobile || !pageContent) return;
+
+        // Reset first so we measure the page's natural height,
+        // not a value previously inflated by this function.
+        sidebar.style.height       = '';
+        sidebarMobile.style.height = '';
+
+        const targetHeight = pageContent.scrollHeight;
+        sidebar.style.height       = `${targetHeight}px`;
+        sidebarMobile.style.height = `${targetHeight}px`;
+    }
+
+    window.addEventListener('load',   syncSidebarHeight);
+    window.addEventListener('resize', syncSidebarHeight);
+
+    // Watch the content column for size changes (images loading,
+    // read-more expanding, etc.) to avoid feedback loops.
+    const pageContentEl = document.querySelector('.project-list');
+    if (pageContentEl) {
+        const observer = new ResizeObserver(syncSidebarHeight);
+        observer.observe(pageContentEl);
+    }
+
 })();
-
-
-
-function syncSidebarHeight() {
-  const parent = document.querySelector('body'); // whatever element defines "full page height"
-  const sidebarMobile = document.querySelector('.sidebar-icon-mobile-container');
-  const sidebar = document.querySelector('.sidebar');
-  sidebar.style.height = `${parent.scrollHeight}px`;
-  sidebarMobile.style.height = `${parent.scrollHeight}px`;
-}
-
-window.addEventListener('load', syncSidebarHeight);
-window.addEventListener('resize', syncSidebarHeight);
-
-// Also watch for content changes (images loading, dynamic content, etc.)
-const observer = new ResizeObserver(syncSidebarHeight);
-observer.observe(document.querySelector('.page-content'));
