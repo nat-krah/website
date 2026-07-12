@@ -97,8 +97,8 @@
                         <p class="read-more-content">
                             <br>
                             The tentacle consists of 8 identical plates stacked on each other, each section separated by a 3D-printed TPU part.
-                            To move the tentacle it is pulled by three wires connected to steppers.
-                            The eye, attached to the final plate, can move independently of the tentacle and has a set of eyelids to blink.
+                            The tentacle is pulled by three cables, similar to a marionet.
+                            The eye, attached to the end, can move independently of the tentacle and has a set of eyelids to blink.
                             The tentacle, eye, and camera are all connected to a Raspberry Pi that uses a Python script to read the camera feed, run a computer vision model, and control the movement of each section.
                         </p>
                     </div>
@@ -228,6 +228,44 @@
                     </div>
                 </section>
 
+                <!-- Snake in Unix Terminal -->
+                <section id="snake-arch" >
+                    <div class="section-info">
+                        <h2>Terminal & OS Exploration</h2>
+                        <a href="https://github.com/nat-krah/snake-cpp" target="_blank" class="btn nowrap section-btn">
+                            <i data-feather="github"></i>
+                            <p>Github</p>
+                        </a>
+                    </div>
+                    <p>
+                        Most software abstracts away the machine beneath it. I went the other direction.
+                        <br><br>
+                        When I got a new laptop, rather than reinstalling Windows or picking up a polished distro, I installed Arch Linux. 
+                        Arch's philosophy is that nothing is set up for you: no desktop environment, no package defaults, no hand-holding. 
+                        To build a working system one needs to understand how each layer of a desktop environment actually fits together: the bootloader, the init system, the compositor, the display server, the window manager. 
+                        The deliberate choice of each tool makes the system custom fit for the user, greatly reducing bloatware and streamlining workflows.
+                        <br><br>
+                        To push deeper, I wrote Snake from scratch in C++ to run on the terminal. 
+                        The goal was to understand what actually happens when a program talks to a terminal and strengthen my relationship with C++. 
+                        Using strictly ANSI escape codes, terminal flags, and the C++ standard library. 
+                        I built a game loop, renderer that writes directly to stdout, keyboard interpreter, and dynamic game customization. 
+                        <br><br>
+                        The code for this project can be found <a href="https://github.com/nat-krah/snake-cpp" class="in-text-link" target="_blank">here</a>.
+                    </p>
+
+                    <div class="project-content"
+                        data-img='["../img/snake-arch/intro-sequence.webp", "../img/snake-arch/fastfetch.webp", "../img/snake-arch/desktop.webp", "../img/snake-arch/gameplay.webp"]'
+                        data-captions='["Snake game intro sequence", "Terminal with Fastfetch", "Hyprland Desktop", "Snake gameplay"]'>
+
+                        <img class="img-project enlargeable" src="../img/snake-arch/intro-sequence.webp" alt="Snake game intro sequence" width="400">
+                        <div class="nav-buttons">
+                            <button class="img-nav-btn prev-btn"><i data-feather="arrow-left"></i></button>
+                            <button class="img-nav-btn next-btn"><i data-feather="arrow-right"></i></button>
+                        </div>
+                        <p class="img-caption">Snake game intro sequence</p>
+                    </div>
+                </section>
+
                 <!-- Vex Over Under -->
                 <section id="vex-over-under">
                     <div class="section-info">
@@ -339,34 +377,6 @@
                     </div>
                 </section>
 
-                <!-- Snake in Unix Terminal (hidden) -->
-                <section id="snake" style="display: none;">
-                    <div class="section-info">
-                        <h2>Snake in Unix Terminal</h2>
-                        <a href="https://github.com/nat-krah/snake-cpp" target="_blank" class="btn nowrap section-btn">
-                            <i data-feather="github"></i>
-                            <p>Github</p>
-                        </a>
-                    </div>
-                    <p>
-                        As part of an effort to learn more C++ and to get more comfortable using Unix terminals, I decided to code the game Snake from the ground up.
-                        I used limited resources, only looking at ANSI escape codes, terminal flags, and C++ documentation.
-                        Basic code was ported over to JavaScript and can be played <a href="snake.html" class="in-text-link">here</a>.
-                    </p>
-
-                    <div class="project-content"
-                        data-img='["../img/snake/intro-sequence.webp", "../img/snake/gameplay.webp"]'
-                        data-captions='["Snake game intro sequence", "Snake gameplay"]'>
-
-                        <img class="img-project enlargeable" src="../img/snake/intro-sequence.webp" alt="Snake game intro sequence" width="400">
-                        <div class="nav-buttons">
-                            <button class="img-nav-btn prev-btn"><i data-feather="arrow-left"></i></button>
-                            <button class="img-nav-btn next-btn"><i data-feather="arrow-right"></i></button>
-                        </div>
-                        <p class="img-caption">Snake game intro sequence</p>
-                    </div>
-                </section>
-
                 <!-- Lunar Lander (hidden) -->
                 <section id="lunar-lander" style="display: none;">
                     <div class="section-info">
@@ -425,7 +435,20 @@
 
                 <!-- Sandy the Beach Cleanup Robot -->
                 <section id="sandy">
-                    <h2>Sandy the Beach Cleanup Robot</h2>
+                    <div class="section-info">
+                        <h2>Sandy the Beach Cleanup Robot</h2>
+                        <a href="https://cad.onshape.com/documents/49b528d1cb021abc2a8c8ecb/v/04075a05538f1be850938fe4/e/6a3fedb9bba1b67d192315f0?showReturnToWorkspaceLink=true" target="_blank" class="btn nowrap section-btn onshape-icon-wrapper">
+                            <svg class="onshape-icon feather" xmlns="http://www.w3.org/2000/svg" viewBox="380.1 179.5 258.9 298.6">
+                                <polygon points="558.7 208.2 508.9 179.5 380.1 253.9 380.1 320.5 431.2 350.8 431.2 282 558.7 208.2"/>
+                                <polygon points="380.1 342.4 380.1 403.4 509.6 478.1 566.3 445.5 566.3 382.9 508.9 420.3 380.1 342.4"/>
+                                <polygon points="585.5 285.3 525.3 250.6 578.5 219.7 639 254.3 639 403.4 585.4 434.3 585.5 285.3"/>
+                                <polygon points="528.6 274.2 506.8 261.6 450.2 294.3 450.2 323.5 472.5 336.7 472.5 306.7 528.6 274.2"/>
+                                <polygon points="450.2 335.3 450.2 362 508.9 397.3 533.1 382.4 533.1 355.6 508.9 371 450.2 335.3"/>
+                                <polygon points="542.8 309.7 516 294.2 539.5 280.5 566.3 295.9 566.3 361.4 542.8 376.2 542.8 309.7"/>
+                            </svg>
+                            <p>Onshape</p>
+                        </a>
+                    </div>
                     <p>
                         Challenged with designing a robot to help the environment using COTS and VEX materials.
                         My robotics team and I decided to focus on beach trash.
