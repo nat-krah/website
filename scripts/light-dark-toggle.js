@@ -5,10 +5,6 @@ const body      = document.body;
 const toggleBtn = document.querySelector("#theme-toggle");
 const THEME_KEY = "theme";
 
-function getSystemTheme() {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark";
-}
-
 function applyTheme(theme) {
   if (theme === "dark") {
     body.classList.add("dark");
@@ -21,7 +17,7 @@ function getPreferredTheme() {
   if (localStorage.getItem(THEME_KEY) != null){
     return localStorage.getItem(THEME_KEY)
   } else{
-    return getSystemTheme();
+    return "light";
   }
 }
 

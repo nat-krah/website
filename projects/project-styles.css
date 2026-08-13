@@ -173,8 +173,10 @@ section {
 .section-info{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    width: 100%;
+    position: relative;
     gap: 1rem;
 }
 .section-info h2 {
@@ -190,6 +192,10 @@ section {
     .section-info p{
         display: none;
     }
+}
+.section-info .time-period{
+    position: absolute;
+    right: 0;
 }
 
 /*The btns; make them look nice*/
